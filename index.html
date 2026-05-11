@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Helena Sofía — Saha Synergy</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --cream: #FAF0DC; --gold: #BA7517; --gold-light: #D4A04A;
+      --gold-pale: #F0DEB0; --charcoal: #2A2218;
+      --text-secondary: #6B5B3E; --text-muted: #9B8B72;
+      --border: rgba(186,117,23,0.2);
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Inter', sans-serif; background: #1A1208; color: var(--cream); min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 40px 24px; }
+    .container { max-width: 600px; width: 100%; text-align: center; }
+    .sigil { font-size: 52px; margin-bottom: 20px; display: block; }
+    .kicker { font-size: 10px; text-transform: uppercase; letter-spacing: 0.22em; color: rgba(186,117,23,0.6); margin-bottom: 12px; }
+    .title { font-family: 'Cormorant Garamond', serif; font-size: 42px; font-weight: 400; color: var(--cream); line-height: 1.15; margin-bottom: 8px; }
+    .subtitle { font-family: 'Cormorant Garamond', serif; font-size: 18px; color: rgba(250,240,220,0.55); font-style: italic; margin-bottom: 48px; }
+    .line { width: 48px; height: 1px; background: rgba(186,117,23,0.4); margin: 0 auto 48px; }
+    .cards { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 40px; }
+    @media (max-width: 480px) { .cards { grid-template-columns: 1fr; } }
+    .card { background: #120E08; border: 1px solid rgba(186,117,23,0.18); border-radius: 18px; padding: 32px 28px; text-decoration: none; color: inherit; display: block; transition: all 0.2s; position: relative; overflow: hidden; }
+    .card::before { content: ''; position: absolute; inset: 0; background: radial-gradient(circle at 50% 0%, rgba(186,117,23,0.08) 0%, transparent 70%); opacity: 0; transition: opacity 0.2s; }
+    .card:hover { border-color: rgba(186,117,23,0.45); transform: translateY(-2px); }
+    .card:hover::before { opacity: 1; }
+    .card-icon { font-size: 28px; margin-bottom: 14px; display: block; }
+    .card-label { font-size: 9px; text-transform: uppercase; letter-spacing: 0.18em; color: rgba(186,117,23,0.55); margin-bottom: 8px; font-weight: 600; }
+    .card-title { font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 500; color: var(--cream); margin-bottom: 10px; line-height: 1.2; }
+    .card-desc { font-size: 12px; color: rgba(250,240,220,0.45); line-height: 1.65; }
+    .card-arrow { margin-top: 18px; font-size: 11px; color: var(--gold-light); letter-spacing: 0.08em; }
+    .footer { font-size: 10px; color: rgba(186,117,23,0.25); text-transform: uppercase; letter-spacing: 0.12em; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <span class="sigil">✦</span>
+    <div class="kicker">Saha Synergy · 2026</div>
+    <div class="title">Helena Sofía</div>
+    <div class="subtitle">Rodriguez Weidner</div>
+    <div class="line"></div>
+
+    <div class="cards">
+      <a href="spm.html" class="card">
+        <span class="card-icon">☽</span>
+        <div class="card-label">Personal Reading</div>
+        <div class="card-title">Soul Path Map</div>
+        <div class="card-desc">Full astrological and Human Design reading. Vedic chart, dasha timeline, shadow work, cycle wisdom, and 2026–30 activation calendar.</div>
+        <div class="card-arrow">Open →</div>
+      </a>
+      <a href="synergy.html" class="card">
+        <span class="card-icon">⊗</span>
+        <div class="card-label">Partnership Reading</div>
+        <div class="card-title">Sophia × Helena<br>Synergy Map</div>
+        <div class="card-desc">Synastry analysis, role architecture, compensation structure, and timing window for the Saha Synergy collaboration. Updated May 2026.</div>
+        <div class="card-arrow">Open →</div>
+      </a>
+    </div>
+
+    <div class="footer">Saha Synergy Group Ltd · Confidential</div>
+  </div>
+</body>
+</html>

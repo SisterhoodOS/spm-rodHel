@@ -1,0 +1,1476 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Helena Sofía — Soul Path Map 2026</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --cream: #FAF0DC; --cream-mid: #F5E6C8; --gold: #BA7517; --gold-light: #D4A04A;
+      --gold-pale: #F0DEB0; --charcoal: #2A2218; --text-primary: #2A2218;
+      --text-secondary: #6B5B3E; --text-muted: #9B8B72; --white: #FFFFFF;
+      --border: rgba(186,117,23,0.2); --shadow: 0 2px 16px rgba(42,34,24,0.08);
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Inter', -apple-system, sans-serif; background: #1A1208; color: var(--text-primary); min-height: 100vh; display: flex; }
+    .sidebar { width: 252px; min-height: 100vh; background: #120E08; border-right: 1px solid rgba(186,117,23,0.12); position: fixed; top: 0; left: 0; display: flex; flex-direction: column; z-index: 100; overflow-y: auto; }
+    .sb-brand { padding: 28px 24px 22px; border-bottom: 1px solid rgba(186,117,23,0.12); }
+    .sb-sigil { font-size: 30px; margin-bottom: 10px; }
+    .sb-name { font-family: 'Cormorant Garamond', serif; font-size: 19px; font-weight: 500; color: var(--cream); letter-spacing: 0.03em; }
+    .sb-tag { font-size: 10px; color: rgba(186,117,23,0.55); text-transform: uppercase; letter-spacing: 0.14em; margin-top: 3px; }
+    .sb-nav { padding: 14px 0; flex: 1; }
+    .nav-group-label { font-size: 9px; text-transform: uppercase; letter-spacing: 0.18em; color: rgba(186,117,23,0.4); padding: 14px 24px 5px; font-weight: 600; }
+    .nav-item { display: flex; align-items: center; gap: 10px; padding: 9px 24px; cursor: pointer; color: rgba(250,240,220,0.5); font-size: 13px; transition: all 0.15s; border-left: 3px solid transparent; user-select: none; }
+    .nav-item:hover { background: rgba(186,117,23,0.07); color: var(--cream); }
+    .nav-item.active { background: rgba(186,117,23,0.11); color: var(--gold-light); border-left-color: var(--gold); }
+    .nav-icon { font-size: 14px; width: 18px; text-align: center; flex-shrink: 0; }
+    .sb-footer { padding: 14px 24px; border-top: 1px solid rgba(186,117,23,0.1); font-size: 10px; color: rgba(186,117,23,0.3); text-transform: uppercase; letter-spacing: 0.1em; }
+    .main { margin-left: 252px; flex: 1; background: var(--cream); min-height: 100vh; }
+    .page-header { background: var(--white); border-bottom: 1px solid var(--border); padding: 28px 48px; position: sticky; top: 0; z-index: 50; box-shadow: var(--shadow); }
+    .ph-inner { display: flex; align-items: flex-end; justify-content: space-between; }
+    .ph-crumb { font-size: 10px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 5px; }
+    .ph-title { font-family: 'Cormorant Garamond', serif; font-size: 32px; font-weight: 400; color: var(--charcoal); }
+    .ph-meta { font-size: 11px; color: var(--text-muted); text-align: right; line-height: 1.6; }
+    .ph-badge { display: inline-block; margin-top: 6px; font-size: 10px; font-weight: 600; color: var(--gold); background: var(--gold-pale); padding: 3px 10px; border-radius: 20px; text-transform: uppercase; letter-spacing: 0.1em; }
+    .section { display: none; padding: 44px 48px; }
+    .section.active { display: block; }
+    .card { background: var(--white); border-radius: 16px; padding: 32px; border: 1px solid var(--border); margin-bottom: 24px; }
+    .card-hd { display: flex; align-items: center; gap: 14px; margin-bottom: 24px; padding-bottom: 20px; border-bottom: 1px solid var(--border); }
+    .card-icon { width: 44px; height: 44px; border-radius: 12px; background: var(--gold-pale); display: flex; align-items: center; justify-content: center; font-size: 20px; flex-shrink: 0; }
+    .card-title { font-family: 'Cormorant Garamond', serif; font-size: 24px; font-weight: 500; color: var(--charcoal); }
+    .card-sub { font-size: 11px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.1em; margin-top: 2px; }
+    .hero { background: linear-gradient(135deg, var(--charcoal) 0%, #3D2E1A 100%); border-radius: 20px; padding: 48px 40px; text-align: center; margin-bottom: 28px; position: relative; overflow: hidden; }
+    .hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(circle at 50% 0%, rgba(186,117,23,0.15) 0%, transparent 65%); }
+    .hero-sigil { font-size: 48px; display: block; margin-bottom: 14px; position: relative; }
+    .hero-kicker { font-size: 10px; text-transform: uppercase; letter-spacing: 0.2em; color: var(--gold-light); margin-bottom: 10px; position: relative; }
+    .hero-title { font-family: 'Cormorant Garamond', serif; font-size: 40px; font-weight: 400; color: var(--cream); line-height: 1.15; margin-bottom: 14px; position: relative; }
+    .hero-body { font-family: 'Cormorant Garamond', serif; font-size: 19px; color: rgba(250,240,220,0.72); font-style: italic; max-width: 520px; margin: 0 auto; line-height: 1.65; position: relative; }
+    .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 24px; }
+    .grid3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 14px; margin-bottom: 24px; }
+    .grid4 { display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 14px; margin-bottom: 24px; }
+    .cell { background: var(--cream); border-radius: 12px; padding: 18px 20px; border: 1px solid var(--border); }
+    .cell-label { font-size: 10px; text-transform: uppercase; letter-spacing: 0.12em; color: var(--text-muted); margin-bottom: 5px; font-weight: 600; }
+    .cell-value { font-family: 'Cormorant Garamond', serif; font-size: 19px; font-weight: 500; color: var(--charcoal); }
+    .cell-sub { font-size: 12px; color: var(--text-secondary); margin-top: 5px; line-height: 1.55; }
+    .pill-row { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 24px; }
+    .pill { display: flex; align-items: center; gap: 7px; padding: 9px 14px; background: var(--white); border-radius: 20px; border: 1px solid var(--border); }
+    .pill-lbl { font-size: 11px; color: var(--text-muted); }
+    .pill-val { font-size: 12px; font-weight: 600; color: var(--gold); }
+    .rules { list-style: none; }
+    .rules li { display: flex; align-items: flex-start; gap: 12px; padding: 13px 0; border-bottom: 1px solid var(--border); font-size: 14px; color: var(--text-secondary); line-height: 1.6; }
+    .rules li:last-child { border-bottom: none; }
+    .rnum { width: 24px; height: 24px; border-radius: 50%; background: var(--gold-pale); color: var(--gold); font-size: 11px; font-weight: 600; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .divider { height: 1px; background: var(--border); margin: 26px 0; }
+    .sec-title { font-family: 'Cormorant Garamond', serif; font-size: 21px; font-weight: 500; color: var(--charcoal); margin-bottom: 14px; }
+    .body-text { font-size: 14px; color: var(--text-secondary); line-height: 1.75; margin-bottom: 16px; }
+    .gold-tag { display: inline-block; font-size: 10px; text-transform: uppercase; letter-spacing: 0.12em; color: var(--gold); font-weight: 600; padding: 3px 10px; background: var(--gold-pale); border-radius: 20px; margin-bottom: 8px; }
+    .highlight { background: linear-gradient(135deg, rgba(186,117,23,0.07), rgba(186,117,23,0.03)); border: 1.5px solid rgba(186,117,23,0.22); border-radius: 16px; padding: 26px 30px; margin-bottom: 24px; }
+    .highlight-headline { font-family: 'Cormorant Garamond', serif; font-size: 28px; font-weight: 400; color: var(--charcoal); line-height: 1.2; margin-bottom: 12px; }
+    .highlight-body { font-size: 14px; color: var(--text-secondary); line-height: 1.75; }
+    .phase-card { padding: 16px 18px; border-radius: 12px; margin-bottom: 12px; border: 1.5px solid transparent; }
+    .phase-card.menstrual { background: rgba(139,107,139,0.1); border-color: rgba(139,107,139,0.2); }
+    .phase-card.follicular { background: rgba(74,123,94,0.1); border-color: rgba(74,123,94,0.3); }
+    .phase-card.ovulatory { background: rgba(186,117,23,0.08); border-color: rgba(186,117,23,0.25); }
+    .phase-card.luteal { background: rgba(123,90,62,0.08); border-color: rgba(123,90,62,0.2); }
+    .phase-name { font-size: 14px; font-weight: 600; margin-bottom: 6px; display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+    .phase-body { font-size: 13px; color: var(--text-secondary); line-height: 1.6; }
+    .shadow-item { display: flex; align-items: flex-start; gap: 14px; padding: 18px; background: var(--cream); border-radius: 12px; margin-bottom: 12px; border: 1px solid var(--border); }
+    .shadow-icon { width: 36px; height: 36px; border-radius: 10px; background: rgba(186,117,23,0.08); display: flex; align-items: center; justify-content: center; font-size: 16px; flex-shrink: 0; }
+    .shadow-lbl { font-size: 10px; text-transform: uppercase; letter-spacing: 0.1em; color: var(--gold); font-weight: 600; margin-bottom: 4px; }
+    .shadow-text { font-size: 13.5px; color: var(--text-secondary); line-height: 1.65; }
+    .dasha-bar { display: flex; align-items: center; justify-content: space-between; padding: 14px 20px; border-radius: 10px; margin-bottom: 8px; }
+    .dasha-bar.saturn { background: rgba(186,117,23,0.09); border: 1px solid rgba(186,117,23,0.2); }
+    .dasha-bar.mercury-main { background: rgba(186,117,23,0.14); border: 1.5px solid var(--gold); }
+    .dasha-bar.antardasha { background: rgba(186,117,23,0.18); border: 1.5px solid rgba(186,117,23,0.4); margin-left: 24px; }
+    .dasha-bar.future { background: rgba(74,123,94,0.09); border: 1px solid rgba(74,123,94,0.2); }
+    .dasha-lbl { font-size: 13px; font-weight: 600; color: var(--text-primary); }
+    .dasha-theme { font-size: 12px; color: var(--text-secondary); margin-top: 2px; font-style: italic; }
+    .dasha-period { font-size: 12px; color: var(--text-muted); flex-shrink: 0; margin-left: 16px; }
+    .now-dot { display: inline-flex; align-items: center; gap: 4px; font-size: 10px; font-weight: 600; color: var(--gold); background: var(--gold-pale); padding: 2px 8px; border-radius: 20px; margin-left: 8px; }
+    .tl-wrap { position: relative; margin: 20px 0 72px; }
+    .tl-track { height: 6px; background: var(--cream-mid); border-radius: 3px; position: relative; }
+    .tl-fill-past { position: absolute; left: 0; top: 0; height: 100%; width: 47%; background: linear-gradient(90deg, rgba(186,117,23,0.35), rgba(186,117,23,0.75)); border-radius: 3px; }
+    .tl-fill-now { position: absolute; left: 0%; top: -4px; height: 14px; width: 3.5%; background: var(--gold); border-radius: 3px; box-shadow: 0 0 10px rgba(186,117,23,0.5); }
+    .tl-fill-future { position: absolute; left: 3.5%; top: 0; height: 100%; width: 96.5%; background: linear-gradient(90deg, rgba(74,123,94,0.55), rgba(74,123,94,0.2)); border-radius: 3px; }
+    .tl-marker { position: absolute; top: 50%; transform: translate(-50%,-50%); }
+    .tl-dot { width: 12px; height: 12px; border-radius: 50%; background: white; border: 2px solid var(--gold); margin: 0 auto; }
+    .tl-dot.now { width: 18px; height: 18px; background: var(--gold); border: 3px solid white; box-shadow: 0 0 0 3px rgba(186,117,23,0.25); }
+    .tl-dot.jup { border-color: rgba(74,123,94,0.8); }
+    .tl-top { position: absolute; bottom: calc(100% + 10px); left: 50%; transform: translateX(-50%); white-space: nowrap; text-align: center; }
+    .tl-bot { position: absolute; top: calc(100% + 10px); left: 50%; transform: translateX(-50%); white-space: nowrap; text-align: center; }
+    .tl-year { font-size: 11px; font-weight: 700; color: var(--text-primary); }
+    .tl-year.gold { color: var(--gold); }
+    .tl-lbl { font-size: 10px; color: var(--text-muted); }
+    .tl-lbl.gold { color: var(--gold); font-weight: 600; }
+    .decl { text-align: center; padding: 36px 32px; background: var(--charcoal); border-radius: 18px; margin-bottom: 16px; }
+    .decl-quote { font-family: 'Cormorant Garamond', serif; font-size: 26px; color: var(--cream); font-style: italic; line-height: 1.4; }
+    .decl-line { width: 40px; height: 1px; background: var(--gold); margin: 14px auto 0; }
+    .cal-year { margin-bottom: 32px; }
+    .cal-year-hd { display: flex; align-items: flex-start; gap: 20px; margin-bottom: 20px; padding-bottom: 16px; border-bottom: 1.5px solid var(--border); }
+    .cal-year-num { font-family: 'Cormorant Garamond', serif; font-size: 52px; font-weight: 300; color: var(--charcoal); line-height: 1; flex-shrink: 0; }
+    .cal-year-badge { display: inline-block; font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; padding: 3px 10px; border-radius: 20px; margin-bottom: 8px; }
+    .badge-gold { color: var(--gold); background: var(--gold-pale); }
+    .badge-green { color: rgba(74,123,94,0.9); background: rgba(74,123,94,0.1); }
+    .badge-red { color: #b53030; background: rgba(181,48,48,0.08); }
+    .cal-year-theme { font-size: 13px; color: var(--text-secondary); line-height: 1.65; }
+    .cal-events { list-style: none; margin-bottom: 20px; }
+    .cal-event { display: flex; align-items: flex-start; gap: 12px; padding: 11px 0; border-bottom: 1px solid rgba(186,117,23,0.08); }
+    .cal-event:last-child { border-bottom: none; }
+    .ev-date { font-size: 11px; font-weight: 700; color: var(--text-muted); min-width: 72px; text-transform: uppercase; letter-spacing: 0.06em; padding-top: 3px; flex-shrink: 0; }
+    .ev-dot { width: 10px; height: 10px; border-radius: 50%; margin-top: 5px; flex-shrink: 0; }
+    .ev-dot.auspicious { background: var(--gold); }
+    .ev-dot.eclipse { background: #b53030; }
+    .ev-dot.transit { background: rgba(186,117,23,0.4); }
+    .ev-dot.peak { background: rgba(74,123,94,0.9); box-shadow: 0 0 0 3px rgba(74,123,94,0.2); }
+    .ev-content { flex: 1; }
+    .ev-title { font-size: 13.5px; font-weight: 600; color: var(--charcoal); margin-bottom: 4px; }
+    .ev-body { font-size: 12.5px; color: var(--text-secondary); line-height: 1.65; }
+    .ev-tag { display: inline-block; font-size: 9px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; padding: 2px 7px; border-radius: 10px; margin-left: 6px; vertical-align: middle; }
+    .ev-tag.peak { color: rgba(74,123,94,0.9); background: rgba(74,123,94,0.12); }
+    .ev-tag.eclipse { color: #b53030; background: rgba(181,48,48,0.08); }
+    .ev-tag.power { color: var(--gold); background: var(--gold-pale); }
+    .audit-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .audit-cell { padding: 16px 18px; border-radius: 12px; background: var(--cream); border: 1px solid var(--border); }
+    .audit-q { font-size: 13px; font-weight: 600; color: var(--charcoal); margin-bottom: 5px; }
+    .audit-a { font-size: 12px; color: var(--text-secondary); line-height: 1.55; }
+    .pending-block { background: rgba(186,117,23,0.04); border: 1px dashed rgba(186,117,23,0.35); border-radius: 12px; padding: 18px 22px; margin-bottom: 20px; font-size: 13px; color: var(--text-muted); }
+  </style>
+</head>
+<body>
+
+<nav class="sidebar">
+  <div class="sb-brand">
+    <div class="sb-sigil">✦</div>
+    <div class="sb-name">Helena Sofía</div>
+    <div class="sb-tag">Soul Path Map · 2026</div>
+  </div>
+  <div class="sb-nav">
+    <div class="nav-group-label">Foundation</div>
+    <div class="nav-item active" onclick="show('overview')"><span class="nav-icon">✦</span> Overview</div>
+    <div class="nav-item" onclick="show('hd')"><span class="nav-icon">◯</span> Human Design</div>
+    <div class="nav-item" onclick="show('vedic')"><span class="nav-icon">☽</span> Vedic Chart</div>
+    <div class="nav-group-label">Embodiment</div>
+    <div class="nav-item" onclick="show('cycle')"><span class="nav-icon">🌿</span> Cycle Phase</div>
+    <div class="nav-item" onclick="show('decision')"><span class="nav-icon">⚖</span> Decision Audit</div>
+    <div class="nav-item" onclick="show('shadow')"><span class="nav-icon">◈</span> Shadow Check</div>
+    <div class="nav-item" onclick="show('activation')"><span class="nav-icon">☀</span> 2026 Activation</div>
+    <div class="nav-item" onclick="show('ventures')"><span class="nav-icon">◉</span> Soul's Work &amp; Role</div>
+    <div class="nav-group-label">Arc</div>
+    <div class="nav-item" onclick="show('timeline')"><span class="nav-icon">→</span> Dasha Timeline</div>
+    <div class="nav-item" onclick="show('declarations')"><span class="nav-icon">❖</span> Declarations</div>
+    <div class="nav-item" onclick="show('calendar')"><span class="nav-icon">📅</span> Calendar 2026–30</div>
+  </div>
+  <div class="sb-footer">Saha Synergy · 2026</div>
+</nav>
+
+<div class="main">
+  <div class="page-header">
+    <div class="ph-inner">
+      <div>
+        <div class="ph-crumb">Soul Path Collective · Saha Synergy · 2026</div>
+        <div class="ph-title">Helena Sofía Rodriguez Weidner</div>
+      </div>
+      <div class="ph-meta">
+        24 January 2006 · Las Palmas de Gran Canaria, Spain<br>
+        Uttara Ashadha Sun · Anuradha Moon · Leo Rising · Budha-Aditya Yoga
+        <div class="ph-badge">Mercury Mahadasha (Dec 2018–Dec 2035) · Profile 3/6 · Manifesting Generator</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- OVERVIEW -->
+  <div id="overview" class="section active">
+    <div class="hero">
+      <span class="hero-sigil">✦</span>
+      <div class="hero-kicker">Soul Path Collective · Saha Synergy · 2026</div>
+      <div class="hero-title">The Undefeated Mind</div>
+      <div class="hero-body">"Her mind does not search for truth. It recognizes it. What others call intelligence, she calls instinct. What others call discipline, she calls devotion. The final victory was not something she was moving toward — it was always the ground beneath her feet."</div>
+    </div>
+
+    <div style="background:rgba(74,123,94,0.06);border:1px solid rgba(74,123,94,0.25);border-radius:12px;padding:18px 22px;margin-bottom:20px;font-size:13px;color:var(--text-secondary);">
+      <strong style="color:rgba(74,123,94,0.9)">Birth time confirmed: 21:20 local (UTC+0).</strong> Ascendant: <strong>Leo 17°13' sidereal</strong> (Purva Phalguni Pada 2, Venus-ruled nakshatra). Moon confirmed in <strong>Anuradha</strong> (Scorpio 7°34' sidereal). All house placements updated from Leo Ascendant. Dasha timeline corrected: Saturn MD at birth, Mercury MD opens December 2018 — 7 years in progress.
+    </div>
+
+    <div class="pill-row">
+      <div class="pill"><span>◯</span><span class="pill-lbl">Genius Code</span><span class="pill-val">Pending Assessment</span></div>
+      <div class="pill"><span>☀</span><span class="pill-lbl">Sun</span><span class="pill-val">9°55' Capricorn · Uttara Ashadha</span></div>
+      <div class="pill"><span>⚡</span><span class="pill-lbl">Dasha</span><span class="pill-val">Mercury / Moon · Jan 2026 – Jun 2027</span></div>
+      <div class="pill"><span>◯</span><span class="pill-lbl">HD Profile</span><span class="pill-val">3/6 · The Living Contrast</span></div>
+      <div class="pill"><span>☽</span><span class="pill-lbl">Moon</span><span class="pill-val">Anuradha · 7°34' Scorpio</span></div>
+      <div class="pill"><span>◯</span><span class="pill-lbl">HD Type</span><span class="pill-val">Manifesting Generator</span></div>
+      <div class="pill"><span>⚬</span><span class="pill-lbl">Authority</span><span class="pill-val">Sacral</span></div>
+    </div>
+
+    <div class="grid2">
+      <div class="cell">
+        <div class="cell-label">Active Dasha</div>
+        <div class="cell-value">Mercury / Moon</div>
+        <div class="cell-sub">Mercury Mahadasha opened December 2018 (age 12) and runs through December 2035. She is 7 years in — not at the dawn but deep in its first arc. Current antardasha: Mercury/Moon (January 2026 – June 2027). Moon sits in her 4th house (Scorpio/Anuradha): the intelligence is turning toward emotional depth, home, and inner knowing. The mind meets the body. The strategy meets the feeling. This is one of the most creatively rich chapters of the full 17 years.</div>
+      </div>
+      <div class="cell">
+        <div class="cell-label">Signature Yoga</div>
+        <div class="cell-value">Budha-Aditya Yoga</div>
+        <div class="cell-sub">Mercury at 7°58' Capricorn and Sun at 9°55' Capricorn — within 1°57' of each other, in the same nakshatra (Uttara Ashadha), ruled by the Sun. Intelligence and identity fused. Her mind IS her signature. She does not have brilliant thoughts — she IS the kind of mind that thinks brilliantly. Recognition arrives through how she articulates, not just what she knows.</div>
+      </div>
+      <div class="cell">
+        <div class="cell-label">Birth Power Theme</div>
+        <div class="cell-value">Uttara Ashadha — The Final Victory</div>
+        <div class="cell-sub">Uttara Ashadha is the nakshatra of sustained, dharmic march toward inevitable triumph. Its symbol is the elephant tusk: endurance, penetrating intelligence, forward movement that does not stop. The deity is the Vishvadevas — gods of collective good deeds. She is not here for quick wins. She is here for the permanent kind. Uttara Ashadha people do not retreat. They march.</div>
+      </div>
+      <div class="cell">
+        <div class="cell-label">Jupiter — Most Powerful Planet</div>
+        <div class="cell-value">Vargottama in Libra</div>
+        <div class="cell-sub">Jupiter is in Libra both in the birth chart (D-1) and the soul chart (D-9). Vargottama = the same sign in both divisions — the highest position of planetary strength. Jupiter in Vishakha (its own nakshatra) in D-1, and Libra D-9 (same sign: Vargottama). Dharmic expansion, beautiful harmonious wisdom, and the capacity to grow through relationship flow through her with the least resistance of any planet in her chart.</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-hd">
+        <div class="card-icon">✦</div>
+        <div>
+          <div class="card-title">Core Gifts</div>
+          <div class="card-sub">What Helena brings to every room — before she speaks</div>
+        </div>
+      </div>
+      <div class="grid2" style="margin-bottom:0">
+        <div class="cell">
+          <div class="cell-label">The Undefeated Intelligence</div>
+          <div class="cell-sub">Budha-Aditya Yoga (Mercury + Sun conjunct in Uttara Ashadha, Sun's own nakshatra): her mind has a quality of invincibility — not arrogance but the quiet certainty of someone who sees clearly and trusts what they see. She does not doubt her intelligence. She doubts whether others are ready for it. That distinction matters.</div>
+        </div>
+        <div class="cell">
+          <div class="cell-label">Dharmic Harmony (Jupiter Vargottama)</div>
+          <div class="cell-sub">Jupiter Vargottama in Libra/Vishakha: she carries an innate capacity to create beauty through wisdom — not decoration, but the real kind of harmony that emerges when truth is expressed with elegance. Her collaborations have an aesthetic quality to them. She makes things not just right but beautiful. And she makes things not just beautiful but right.</div>
+        </div>
+        <div class="cell">
+          <div class="cell-label">Gate 41 — Desire as Fuel</div>
+          <div class="cell-sub">Her Personality Sun activates Gate 41, the Gate of Contraction (Root center) — the starting point of all new cycles in the Human Design mandala. At shadow frequency (Fantasy), desire becomes escapism, longing for what isn't here. At gift frequency (Anticipation), it becomes precise creative fuel: the ability to feel into what wants to be born next. Her life's work is demonstrating that desire, when trusted rather than suppressed, is a compass.</div>
+        </div>
+        <div class="cell">
+          <div class="cell-label">The Sustained March</div>
+          <div class="cell-sub">Uttara Ashadha + Saturn in Pushya (own nakshatra) + Profile 3/6 (the long arc toward living proof): she is built for the long game. What others begin and abandon, she finishes. Not out of stubbornness — out of a deep inner knowing that the right thing to do is the thing she committed to. Her discipline reads as devotion because, to her, it is.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- HUMAN DESIGN -->
+  <div id="hd" class="section">
+    <div style="background:rgba(186,117,23,0.06);border:1px solid rgba(186,117,23,0.2);border-radius:12px;padding:14px 20px;margin-bottom:24px;font-size:12px;color:var(--text-secondary);line-height:1.7;">
+      <strong style="color:var(--gold);font-size:11px;text-transform:uppercase;letter-spacing:0.1em;">Calculation Sources</strong><br>
+      <strong>HD chart verified from official myHumanDesign.com chart.</strong> Birth: 24 January 2006, Las Palmas de Gran Canaria, Spain (UTC+0). Design date: 27 October 2005. <strong>Profile 3/6 confirmed:</strong> Personality Sun Gate 41.3 (Root center), Design Sun Gate 28.6 (Spleen center). Type: <strong>Manifesting Generator</strong> (Sacral connected to Throat). Authority: <strong>Sacral</strong> (immediate gut response). Definition: <strong>Single Definition.</strong> Incarnation Cross: <strong>Right Angle Cross of The Unexpected (41/31 | 28/27).</strong> Gene Keys: Richard Rudd (2009).
+    </div>
+
+    <div class="card">
+      <div class="card-hd">
+        <div class="card-icon">◯</div>
+        <div>
+          <div class="card-title">Human Design — 3/6 Manifesting Generator</div>
+          <div class="card-sub">Sacral Authority · Right Angle Cross of The Unexpected (41/31 | 28/27) · Single Definition · Design date: 27 Oct 2005</div>
+        </div>
+      </div>
+
+      <div class="grid2" style="margin-bottom:20px">
+        <div class="cell" style="border-left:3px solid var(--gold)">
+          <div class="cell-label">Type</div>
+          <div class="cell-value">Manifesting Generator</div>
+          <div class="cell-sub">Confirmed from official HD chart. The Manifesting Generator has a defined Sacral center with a motor connection that runs to the Throat — the center of manifestation. This means she can initiate action faster than a pure Generator; she moves, builds, and does multiple things simultaneously. The key distinction from Generator: she must Inform. Before acting on Sacral responses, she tells the relevant people what she is going to do. When she skips this step, she creates resistance and frustration in those around her. Strategy: Respond, then Inform. Not-Self themes: Frustration (when not responding from Sacral) and Anger (when she acts without informing others).</div>
+        </div>
+        <div class="cell" style="border-left:3px solid var(--gold)">
+          <div class="cell-label">Authority</div>
+          <div class="cell-value">Sacral</div>
+          <div class="cell-sub">Confirmed Sacral Authority. The Solar Plexus center is undefined — there is no emotional wave to ride. Her decision-making intelligence lives in the body, not the mind. The Sacral speaks in pre-verbal signals: a rising "mmh-hmm" (yes, expansion, aliveness) or a dropping "uh-uh" (no, contraction, flatness). These sensations arise before the rational mind has processed anything. The practice: ask yes/no questions and notice the first body response before thought forms. Major life decisions that override the Sacral's quiet no — even for excellent logical reasons — create the frustration and misalignment that derail her. She does not need to sleep on it. The gut already knows.</div>
+        </div>
+        <div class="cell">
+          <div class="cell-label">Profile</div>
+          <div class="cell-value">3/6 — The Living Contrast</div>
+          <div class="cell-sub">Confirmed from official HD chart. Personality Sun Gate 41 Line 3, Design Sun Gate 28 Line 6. Line 3 (Martyr): the soul curriculum is trial, error, and discovery through direct experience. She learns what works by living through what doesn't. Bonds form and break — each one a teaching. The Line 3 is not a victim of this process; she is the scientist. Phase 1 (birth to ~30): on the roof, gathering the material. Around 30 she enters Phase 2: stepping back, integrating, observing from above. At ~50, Phase 3: she descends as the living proof — the Role Model whose authority comes not from theory but from having actually done it. The 3/6 is called The Living Contrast because she carries both the failure and the wisdom simultaneously.</div>
+        </div>
+        <div class="cell">
+          <div class="cell-label">Strategy / Not-Self</div>
+          <div class="cell-value">Respond + Inform · Satisfaction is the compass</div>
+          <div class="cell-sub">Manifesting Generator strategy: respond to what life presents (Sacral yes/no), then inform the relevant people before acting. The speed of the MG is a gift and a risk — she processes fast and may skip steps others need to follow. Informing is not asking permission; it is keeping others from being surprised. The sign she is in her correct life is Satisfaction: the deep sense that what she is doing is genuinely hers. When frustration dominates, something is being initiated from the mental will rather than the Sacral body. When anger appears, she has been moving without informing. Both are redirections, not judgments.</div>
+        </div>
+      </div>
+
+      <div class="divider"></div>
+      <div class="sec-title">Key Gates — Confirmed from Official HD Chart</div>
+      <div class="grid2" style="margin-bottom:20px">
+        <div class="cell" style="border-left:3px solid var(--gold)">
+          <div class="cell-label">Gate 41.3 · Personality Sun · Root Center</div>
+          <div class="cell-value" style="font-size:16px">The Anticipation Gate</div>
+          <div class="cell-sub">Gate 41 sits in the Root center and is the starting point of the entire Human Design mandala — it is the gate of desire, contraction, and new beginnings. At shadow frequency (Fantasy), it generates longing and escapism: wanting what isn't here, projecting onto futures that haven't arrived. At gift frequency (Anticipation), it becomes the body's precise sense of what wants to be born next — desire as compass rather than distraction. At Siddhi (Emanation), it transmits the frequency of possibility into every room she enters. Line 3: the Martyr — she discovers the power of this gate through trying, failing, and refining. The desire that survives repeated reality-testing is the real desire.</div>
+        </div>
+        <div class="cell" style="border-left:3px solid rgba(186,117,23,0.5)">
+          <div class="cell-label">Gate 31.3 · Personality Earth · Throat Center</div>
+          <div class="cell-value" style="font-size:16px">The Influence Gate</div>
+          <div class="cell-sub">Gate 31 is in the Throat center — the place of manifestation through expression. It is the gate of democratic leadership: the authority that earns its position by demonstration, not declaration. Shadow (Arrogance): the frequency of leading without having done the work, claiming authority that hasn't been lived. Gift (Leadership): the quiet influence of someone who speaks from genuine experience and invites others into motion rather than commanding it. Siddhi (Humility): the highest leadership — so fully at ease that there is nothing to prove, and people follow simply because they want to. Line 3: she earns this authority through the trials of Phase 1. Her grounding is what makes the leadership real.</div>
+        </div>
+        <div class="cell" style="border-left:3px solid rgba(186,117,23,0.5)">
+          <div class="cell-label">Gate 28.6 · Design Sun · Spleen Center</div>
+          <div class="cell-value" style="font-size:16px">The Totality Gate</div>
+          <div class="cell-sub">Gate 28 is in the Spleen center — the oldest intelligence in the body, the instinct for what is safe and what is not. Gate 28 is the Game Player: the gate of finding meaning through the risk of being fully alive. Shadow (Purposelessness): the experience of life without a reason strong enough to justify the cost of living it. Gift (Totality): the willingness to commit entirely to what is meaningful, holding nothing back. Siddhi (Immortality): the recognition that what is lived fully never dies. Line 6: her unconscious radiance is this quality of Totality — others sense in her someone who plays for real, not for rehearsal. She transmits the permission to be fully in it.</div>
+        </div>
+        <div class="cell" style="border-left:3px solid rgba(186,117,23,0.5)">
+          <div class="cell-label">Gate 27.6 · Design Earth · Sacral Center</div>
+          <div class="cell-value" style="font-size:16px">The Caring Gate</div>
+          <div class="cell-sub">Gate 27 is in the Sacral — the center of life-force energy — and is the gate of nourishment and care. Shadow (Selfishness): care used as control, nurturing that binds rather than liberates, protecting others from the growth they need. Gift (Altruism): the ability to give freely, from genuine abundance rather than obligation or strategy. Siddhi (Selflessness): the state in which the distinction between self and other dissolves in the act of caring. Line 6: her unconscious purpose is to be the living model of care that comes without a hidden agenda. This quality operates below the surface — she may not see it in herself, but those around her feel it as the ground beneath the relationship.</div>
+        </div>
+      </div>
+
+      <div class="divider"></div>
+      <div class="sec-title">The 3/6 Profile in Depth</div>
+      <div class="highlight">
+        <div class="highlight-headline">The Living Contrast — Who Becomes the Proof</div>
+        <div class="highlight-body">The 3/6 is called The Living Contrast because she carries both sides of every experience she has lived. Line 3 is the Martyr — not in the sense of suffering, but in the alchemical sense: the one who is changed by what she goes through. Her soul curriculum in Phase 1 is trial, error, and discovery through direct experience. Partnerships that don't last. Projects that don't work. Paths that dead-end. Every one of these is data, not damage. The Line 3 does not learn from books or advice — she learns from doing, and doing again differently. This is the source of her eventual authority: she has actually lived what she speaks about. Line 6 is the Role Model — but unlike Line 5, the 3/6 Role Model is not universal by projection. She becomes the model by having done the work. Phase 1 (birth to roughly 30): on the roof. Gathering the material. Making the discoveries that will become the teaching. Phase 2 (30-50): off the roof, observing. Integrating what was lived. Less visible, more distilled. Phase 3 (50+): she descends as the living proof. The authority of the 3/6 is earned, not projected. She does not speak about freedom from having read about it. She speaks from having found her way through. This is the contrast she carries: the failure and the wisdom, simultaneously, in the same person.</div>
+      </div>
+
+      <ul class="rules">
+        <li><span class="rnum">1</span><strong>The trial and error is the curriculum, not the failure.</strong> Phase 1 for a 3/6 is not the time to have it figured out. It is the time to experiment — what fits, what doesn't, what breaks, what holds. The Line 3 gathers this library through living it. Do not judge the stumbles. They are the material the Role Model will draw from.</li>
+        <li><span class="rnum">2</span><strong>Bonds that end are not failures.</strong> The Line 3 often has relationships, partnerships, and collaborations that form, teach, and then dissolve. This is not a pattern to fix. It is the design. Each bond that breaks leaves behind a precise knowing about what she is and isn't built for. That knowing is the gift.</li>
+        <li><span class="rnum">3</span><strong>Manifesting Generator: respond, then inform.</strong> The Sacral's yes is the green light. She can move fast — faster than most. But the MG who skips informing creates confusion and resistance in the people around her. Informing is not asking permission. It is: "I'm doing this. Here's what that means for you." The Sacral responds. The voice informs. In that order.</li>
+        <li><span class="rnum">4</span><strong>Sacral Authority: the gut speaks before the mind.</strong> She does not need to sleep on it. She does not need to run the wave. The Sacral already knows. The practice: when a question arrives, notice the first body response before the mind generates a story. The gut lift is yes. The contraction is no. Trust the body's first answer, especially when the mind has compelling reasons to override it.</li>
+        <li><span class="rnum">5</span><strong>Satisfaction is the north star.</strong> The sign she is in correct alignment is Satisfaction — the felt sense that what she is doing is genuinely, deeply hers. This is not excitement. Not euphoria. It is the steady quality of full engagement. When frustration persists, she has been responding to the wrong invitations. When anger appears, she has moved without informing. Both are redirections back to the Sacral.</li>
+        <li><span class="rnum">6</span><strong>Gate 41 initiates the desire, not the plan.</strong> Her Personality Sun is in the gate that starts all new cycles. The practice is to trust desire as directional intelligence — not to suppress longing until it becomes "realistic," but to follow the authentic signal and let it lead to the next real thing. Anticipation is the gift frequency. Emanation is what it becomes when she stops questioning whether what she wants is allowed.</li>
+      </ul>
+    </div>
+
+    <!-- GENE KEYS -->
+    <div class="card">
+      <div class="card-hd">
+        <div class="card-icon">🔑</div>
+        <div>
+          <div class="card-title">Gene Keys — Full Hologenetic Profile</div>
+          <div class="card-sub">Richard Rudd (2009) · Swiss Ephemeris computed · Activation + Venus + Pearl + Imprinting Sequences</div>
+        </div>
+      </div>
+      <div class="body-text">Each Gene Key has three frequencies: the <strong>Shadow</strong> (unconscious fear pattern), the <strong>Gift</strong> (heart-based potential), and the <strong>Siddhi</strong> (divine expression). The journey is from Shadow to Gift — not by eliminating the shadow but by transmuting it through conscious awareness. Personality positions are what she is conscious of. Design positions are what others see in her before she sees it herself.</div>
+
+      <div class="sec-title">Activation Sequence — Life's Purpose</div>
+      <div class="grid2" style="margin-bottom:24px">
+        <div class="cell" style="border-left:3px solid var(--gold)">
+          <div class="cell-label">Life's Work · Personality Sun · Gate 41.3</div>
+          <div class="cell-value">Gene Key 41 — Emanation</div>
+          <div class="cell-sub" style="margin-top:8px">
+            <span style="color:#a33;font-size:11px;font-weight:600;text-transform:uppercase">Shadow:</span> Fantasy<br>
+            <span style="color:var(--gold);font-size:11px;font-weight:600;text-transform:uppercase">Gift:</span> Anticipation<br>
+            <span style="color:rgba(74,123,94,0.9);font-size:11px;font-weight:600;text-transform:uppercase">Siddhi:</span> Emanation<br><br>
+            <span style="font-size:12px;color:var(--text-secondary)">Gate 41 is the starting point of the entire Human Design mandala — the gate of desire and new beginnings. Her life's work is the transmutation of longing into creative fuel. Fantasy is desire that escapes from the present into an imagined future rather than moving toward it. Anticipation is the precise feeling-sense of what wants to be born next: desire as compass, not escape. Emanation is what it looks like when this frequency is fully lived — she transmits possibility itself, not as a concept but as a felt quality. The Line 3 means she learns this through direct experience: desires that don't pan out reveal which ones were Fantasy and which were real. The ones that survive testing are the ones that lead somewhere.</span>
+          </div>
+        </div>
+        <div class="cell" style="border-left:3px solid rgba(186,117,23,0.5)">
+          <div class="cell-label">Evolution · Personality Earth · Gate 31.3</div>
+          <div class="cell-value">Gene Key 31 — Humility</div>
+          <div class="cell-sub" style="margin-top:8px">
+            <span style="color:#a33;font-size:11px;font-weight:600;text-transform:uppercase">Shadow:</span> Arrogance<br>
+            <span style="color:var(--gold);font-size:11px;font-weight:600;text-transform:uppercase">Gift:</span> Leadership<br>
+            <span style="color:rgba(74,123,94,0.9);font-size:11px;font-weight:600;text-transform:uppercase">Siddhi:</span> Humility<br><br>
+            <span style="font-size:12px;color:var(--text-secondary)">Her evolution is through learning what real leadership is — and is not. Arrogance is authority claimed before it has been earned: speaking as if the experience is there when it isn't yet. Gift (Leadership): the influence that arises naturally when she speaks from what she has actually lived. Not performed authority. Demonstrated authority. Line 3: she discovers the difference between the two through the direct experience of what happens when she leads from Arrogance (it collapses) versus from genuine earned ground (it holds). Humility is not smallness — it is the effortless authority of someone who no longer needs to prove anything because they have done the work.</span>
+          </div>
+        </div>
+        <div class="cell" style="border-left:3px solid rgba(186,117,23,0.5)">
+          <div class="cell-label">Radiance (Unconscious) · Design Sun · Gate 28.6</div>
+          <div class="cell-value">Gene Key 28 — Totality</div>
+          <div class="cell-sub" style="margin-top:8px">
+            <span style="color:#a33;font-size:11px;font-weight:600;text-transform:uppercase">Shadow:</span> Purposelessness<br>
+            <span style="color:var(--gold);font-size:11px;font-weight:600;text-transform:uppercase">Gift:</span> Totality<br>
+            <span style="color:rgba(74,123,94,0.9);font-size:11px;font-weight:600;text-transform:uppercase">Siddhi:</span> Immortality<br><br>
+            <span style="font-size:12px;color:var(--text-secondary)">Her unconscious radiance — what others sense about her before she speaks — is the quality of someone fully in the game. Purposelessness is the shadow: life without a meaning strong enough to justify the cost of being fully alive in it. When this frequency is running, she may seek stimulation or risk as a substitute for genuine meaning. Totality is the gift: the willingness to commit entirely, to play for real and hold nothing back. Line 6 means this is her unconscious transmission — others sense in her a quality of genuine stakes, of someone actually living rather than rehearsing. Immortality is what remains when she has been this fully alive long enough that the life she has lived cannot be erased by circumstances.</span>
+          </div>
+        </div>
+        <div class="cell" style="border-left:3px solid rgba(186,117,23,0.5)">
+          <div class="cell-label">Purpose (Unconscious) · Design Earth · Gate 27.6</div>
+          <div class="cell-value">Gene Key 27 — Selflessness</div>
+          <div class="cell-sub" style="margin-top:8px">
+            <span style="color:#a33;font-size:11px;font-weight:600;text-transform:uppercase">Shadow:</span> Selfishness<br>
+            <span style="color:var(--gold);font-size:11px;font-weight:600;text-transform:uppercase">Gift:</span> Altruism<br>
+            <span style="color:rgba(74,123,94,0.9);font-size:11px;font-weight:600;text-transform:uppercase">Siddhi:</span> Selflessness<br><br>
+            <span style="font-size:12px;color:var(--text-secondary)">At her deepest unconscious level, Helena is learning the difference between care that binds and care that liberates. Selfishness in this context is not greed — it is the subtle use of care as control: nurturing others in ways that keep them dependent, protecting people from the growth they need, giving to receive a certain kind of acknowledgment. Altruism is the gift: care given freely from genuine abundance, with no hidden transaction. Line 6: her unconscious purpose is to be the living demonstration of what care without agenda looks like. Selflessness is not self-erasure — it is the state in which the caring happens so naturally that the distinction between self and other stops being the relevant frame.</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="divider"></div>
+      <div class="sec-title">Venus Sequence — Love Nature</div>
+      <div class="grid2" style="margin-bottom:24px">
+        <div class="cell">
+          <div class="cell-label">Attraction · Personality Venus · Gate 54.3</div>
+          <div class="cell-value">Gene Key 54 — Ascension</div>
+          <div class="cell-sub" style="margin-top:8px">
+            <span style="color:#a33;font-size:11px;font-weight:600;text-transform:uppercase">Shadow:</span> Greed<br>
+            <span style="color:var(--gold);font-size:11px;font-weight:600;text-transform:uppercase">Gift:</span> Aspiration<br>
+            <span style="color:rgba(74,123,94,0.9);font-size:11px;font-weight:600;text-transform:uppercase">Siddhi:</span> Ascension<br><br>
+            <span style="font-size:12px;color:var(--text-secondary)">Gate 54 is in the Root center — it is the gate of ambition and the drive to reach higher. In love, her attraction pattern carries this quality: she is drawn to people and partnerships that lift her upward, that open access to growth, resources, and expanded possibility. The Greed shadow is ambition that loses its integrity — pursuing connections for what they can provide rather than for genuine resonance. The Gift of Aspiration is the honest reach toward what is higher: partners who challenge, elevate, and expand the horizon. Line 3 means she learns this through direct experience — discovering which aspirations were real and which were projections onto people who couldn't hold the weight. Ascension is the Siddhi: the love that literally raises the frequency of everyone it touches.</span>
+          </div>
+        </div>
+        <div class="cell">
+          <div class="cell-label">IQ · Design Venus · Gate 11.2</div>
+          <div class="cell-value">Gene Key 11 — Light</div>
+          <div class="cell-sub" style="margin-top:8px">
+            <span style="color:#a33;font-size:11px;font-weight:600;text-transform:uppercase">Shadow:</span> Obscurity<br>
+            <span style="color:var(--gold);font-size:11px;font-weight:600;text-transform:uppercase">Gift:</span> Idealism<br>
+            <span style="color:rgba(74,123,94,0.9);font-size:11px;font-weight:600;text-transform:uppercase">Siddhi:</span> Light<br><br>
+            <span style="font-size:12px;color:var(--text-secondary)">Gate 11 sits in the Ajna center — the seat of conceptual intelligence and vision. Her Design Venus (unconscious love intelligence) carries the frequency of idealism: she loves from a place of seeing people not only as they are but as they could be. The Obscurity shadow is the downside of this: ideas and visions for connection that never find a real form, love expressed through concepts rather than presence. The Gift of Idealism is the capacity to hold a vision of the beloved that inspires growth in both people — a love that has a horizon. Line 2: the Hermit — she needs time and space within love to process privately, and her deepest relational intelligence emerges when she is not performing it. Light is the Siddhi: love as a transmission that simply illuminates the space.</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="divider"></div>
+      <div class="sec-title">Pearl Sequence — Vocation + Prosperity</div>
+      <div class="grid2" style="margin-bottom:24px">
+        <div class="cell" style="border-left:3px solid var(--gold)">
+          <div class="cell-label">Vocation · Personality N. Node (Rahu) · Gate 18.3</div>
+          <div class="cell-value">Gene Key 18 — Integrity</div>
+          <div class="cell-sub" style="margin-top:8px">
+            <span style="color:#a33;font-size:11px;font-weight:600;text-transform:uppercase">Shadow:</span> Judgment<br>
+            <span style="color:var(--gold);font-size:11px;font-weight:600;text-transform:uppercase">Gift:</span> Integrity<br>
+            <span style="color:rgba(74,123,94,0.9);font-size:11px;font-weight:600;text-transform:uppercase">Siddhi:</span> Perfection<br><br>
+            <span style="font-size:12px;color:var(--text-secondary)">Gate 18 is in the Spleen center — the body's intelligence for what needs to be corrected. Her vocational north star is Integrity: the alignment of what she believes, what she says, and what she does. The Judgment shadow is this same corrective impulse turned corrosive — finding fault without offering repair, holding others (and herself) to standards that leave no room for the human reality of imperfection. The Gift of Integrity is the ability to notice what is out of alignment and move toward correction with compassion rather than condemnation. Line 3: she discovers the difference between these two through living out the consequences of both. Perfection is the Siddhi — not flawlessness, but the recognition that everything, exactly as it is, is complete.</span>
+          </div>
+        </div>
+        <div class="cell" style="border-left:3px solid rgba(186,117,23,0.5)">
+          <div class="cell-label">Culture · Personality S. Node (Ketu) · Gate 34.2</div>
+          <div class="cell-value">Gene Key 34 — Strength</div>
+          <div class="cell-sub" style="margin-top:8px">
+            <span style="color:#a33;font-size:11px;font-weight:600;text-transform:uppercase">Shadow:</span> Force<br>
+            <span style="color:var(--gold);font-size:11px;font-weight:600;text-transform:uppercase">Gift:</span> Strength<br>
+            <span style="color:rgba(74,123,94,0.9);font-size:11px;font-weight:600;text-transform:uppercase">Siddhi:</span> Majesty<br><br>
+            <span style="font-size:12px;color:var(--text-secondary)">Gate 34 is the gate of pure Sacral power — the most generative force in the Human Design system. The culture she carries through past-life wisdom (Ketu/South Node) is the energy of real Strength: not effort-based, not performed, but the kind that flows without friction when she is fully in her correct life. The Force shadow is power used to override rather than to build — getting things done through pressure rather than alignment. The Gift of Strength is effortless: when she is responding from genuine Sacral engagement, the power is available without straining for it. Line 2: the Hermit quality means this strength is most potent when she has had time to drop into herself rather than performing for external expectation. Majesty does not announce itself.</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="divider"></div>
+      <div class="sec-title">Imprinting — Emotional Body</div>
+      <div class="grid2" style="margin-bottom:24px">
+        <div class="cell">
+          <div class="cell-label">Imprinting · Personality Moon · Gate 17.3</div>
+          <div class="cell-value">Gene Key 17 — Far-sightedness</div>
+          <div class="cell-sub" style="margin-top:8px">
+            <span style="color:#a33;font-size:11px;font-weight:600;text-transform:uppercase">Shadow:</span> Opinion<br>
+            <span style="color:var(--gold);font-size:11px;font-weight:600;text-transform:uppercase">Gift:</span> Far-sightedness<br>
+            <span style="color:rgba(74,123,94,0.9);font-size:11px;font-weight:600;text-transform:uppercase">Siddhi:</span> Omniscience<br><br>
+            <span style="font-size:12px;color:var(--text-secondary)">Gate 17 is in the Ajna center and shapes her conscious emotional imprinting — the patterns she absorbed through her early environment. Opinion is the shadow: a mind so full of pre-formed positions that it cannot receive new information without immediately sorting it into agree/disagree. When she is in Opinion, her intelligence loops on itself. The Gift of Far-sightedness is the ability to hold a wide view without collapsing into a fixed position — seeing the pattern before others do, tracking the long arc. Line 3: she discovers the difference between these two through experiencing what happens when she holds a position too tightly versus when she stays open to what's actually unfolding. Omniscience is the Siddhi: the mind that has stopped needing to be right because it is in contact with something that simply sees.</span>
+          </div>
+        </div>
+        <div class="cell">
+          <div class="cell-label">Core (Unconscious) · Design Moon · Gate 21.5</div>
+          <div class="cell-value">Gene Key 21 — Valor</div>
+          <div class="cell-sub" style="margin-top:8px">
+            <span style="color:#a33;font-size:11px;font-weight:600;text-transform:uppercase">Shadow:</span> Control<br>
+            <span style="color:var(--gold);font-size:11px;font-weight:600;text-transform:uppercase">Gift:</span> Authority<br>
+            <span style="color:rgba(74,123,94,0.9);font-size:11px;font-weight:600;text-transform:uppercase">Siddhi:</span> Valor<br><br>
+            <span style="font-size:12px;color:var(--text-secondary)">Gate 21 sits in the Will/Heart center — the seat of willpower, self-worth, and the need to be recognized as having value. Her Design Moon (unconscious emotional core) carries this frequency: what others sense about her emotional depth before she speaks is a quality of real inner authority. The Control shadow is the attempt to manage outcomes and people from a place of insufficient trust — holding tightly because releasing feels like losing. The Gift of Authority is the natural confidence that comes from genuine self-worth: she does not need to control because she trusts that her presence is enough. Line 5: this quality reads universally — there is something in her emotional baseline that others experience as a kind of quiet inevitability. Valor is the Siddhi: the courage that acts from heart without needing guarantees.</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="divider"></div>
+      <div class="sec-title">Additional Chart Data</div>
+      <div class="grid2" style="margin-bottom:24px">
+        <div class="cell">
+          <div class="cell-label">Incarnation Cross</div>
+          <div class="cell-value" style="font-size:15px">Right Angle Cross of The Unexpected (41/31 | 28/27)</div>
+          <div class="cell-sub">Right Angle Crosses are personally focused — the life theme is lived for the self first. The Cross of The Unexpected is defined by the tension between desire and influence (41/31) and between finding meaning and genuinely caring (28/27). Her life carries an unpredictable quality — the unexpected is not what happens to her, it is what she brings. She does not follow the expected arc. She follows the call of genuine desire (Gate 41), influences through earned leadership (Gate 31), commits with full totality to what is meaningful (Gate 28), and cares in ways that liberate rather than bind (Gate 27). The unexpected is the gift: she will take paths others didn't see coming, and those paths will turn out to matter.</div>
+        </div>
+        <div class="cell">
+          <div class="cell-label">Definition · Digestion · Environment · Sense</div>
+          <div class="cell-value" style="font-size:15px">Single Definition · Consecutive · Kitchens · Outer Vision</div>
+          <div class="cell-sub"><strong style="color:var(--gold)">Single Definition:</strong> all her defined centers are connected. She is self-contained; she doesn't need another person to "complete" her circuitry. She processes independently and consistently — her experience of herself does not shift radically based on who is around her. <strong style="color:var(--gold)">Consecutive Appetite:</strong> she digests best when eating one thing at a time, fully completing it before moving to the next — applies to food and to projects. <strong style="color:var(--gold)">Kitchens environment:</strong> thrives in spaces with activity, warmth, and the energy of things being prepared and created. <strong style="color:var(--gold)">Outer Vision:</strong> her most important sense is what she takes in through her eyes at a distance — she sees patterns, she reads rooms, she has the panoramic intelligence.</div>
+        </div>
+      </div>
+
+      <div class="card" style="background:var(--charcoal);border-color:transparent;margin-bottom:0">
+        <div style="font-size:12px;color:rgba(250,240,220,0.6);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:10px;">Pattern Across Her Gates</div>
+        <div style="font-family:'Cormorant Garamond',serif;font-size:20px;color:var(--cream);line-height:1.6;">
+          Gate 41 (Anticipation) begins every new cycle in the mandala — her Personality Sun opens doors no one else has seen yet. Gate 31 (Leadership) says the way she moves through those doors is by earning authority, not claiming it. Gate 28 (Totality) says her unconscious transmission is the quality of someone actually in the game, holding nothing back. Gate 27 (Altruism) says at her deepest level she is learning to care without a hidden transaction. Profile 3/6 says all of this will, eventually, become the proof. She is 20. She is in Phase 1. <span style="color:var(--gold-light)">Everything she is living right now is the material the Role Model will draw from.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- VEDIC CHART -->
+  <div id="vedic" class="section">
+    <div style="background:rgba(186,117,23,0.06);border:1px solid rgba(186,117,23,0.2);border-radius:12px;padding:14px 20px;margin-bottom:24px;font-size:12px;color:var(--text-secondary);line-height:1.7;">
+      <strong style="color:var(--gold);font-size:11px;text-transform:uppercase;letter-spacing:0.1em;">Calculation Sources</strong><br>
+      <strong style="color:rgba(74,123,94,0.9);">Verified via Swiss Ephemeris / Drikpanchang.com / FindYourFate 2006 Ephemeris.</strong> All planetary positions cross-referenced across three sources. Lahiri Ayanamsa: <strong>23°55'38"</strong> (January 24, 2006) — source: jagannathhora.com. <strong>Birth time confirmed: 21:20 local (UTC+0).</strong> Ascendant calculated via Meeus astronomical formula (verified independent): <strong>Leo 17°13' sidereal</strong> (Virgo 11°08' tropical), Purva Phalguni Pada 2. Moon confirmed in <strong>Anuradha</strong> (Scorpio 7°34' sidereal) — born 6h41m after the Vishakha/Anuradha transition at 14:39 local. Dasha balance recalculated from Moon at 31.8% through Anuradha: Saturn MD remaining at birth = 12.96 years (ends December 2018), Mercury MD opens December 2018.
+    </div>
+
+    <div class="card">
+      <div class="card-hd">
+        <div class="card-icon">☽</div>
+        <div>
+          <div class="card-title">Vedic Chart — Full Reading</div>
+          <div class="card-sub">Sidereal / Lahiri Ayanamsa · Leo Ascendant 17°13' · Swiss Ephemeris verified · Birth time confirmed 21:20 UTC</div>
+        </div>
+      </div>
+
+      <div class="sec-title">Planetary Positions (Cross-Referenced · Swiss Ephemeris Verified)</div>
+      <div style="overflow-x:auto;margin-bottom:24px;">
+        <table style="width:100%;border-collapse:collapse;font-size:13px;">
+          <thead>
+            <tr style="background:var(--cream);border-bottom:2px solid var(--border);">
+              <th style="padding:10px 14px;text-align:left;font-size:10px;text-transform:uppercase;letter-spacing:0.1em;color:var(--text-muted);font-weight:600;">Planet</th>
+              <th style="padding:10px 14px;text-align:left;font-size:10px;text-transform:uppercase;letter-spacing:0.1em;color:var(--text-muted);font-weight:600;">Tropical</th>
+              <th style="padding:10px 14px;text-align:left;font-size:10px;text-transform:uppercase;letter-spacing:0.1em;color:var(--text-muted);font-weight:600;">Sidereal (Vedic)</th>
+              <th style="padding:10px 14px;text-align:left;font-size:10px;text-transform:uppercase;letter-spacing:0.1em;color:var(--text-muted);font-weight:600;">Nakshatra</th>
+              <th style="padding:10px 4px;text-align:center;font-size:10px;text-transform:uppercase;letter-spacing:0.1em;color:var(--text-muted);font-weight:600;">Lord</th>
+              <th style="padding:10px 14px;text-align:center;font-size:10px;text-transform:uppercase;letter-spacing:0.1em;color:var(--text-muted);font-weight:600;">House</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="border-bottom:1px solid var(--border);background:rgba(186,117,23,0.05);">
+              <td style="padding:10px 14px;font-weight:600;color:var(--charcoal);">Ascendant</td>
+              <td style="padding:10px 14px;color:var(--text-secondary);">11°08' Virgo (tropical)</td>
+              <td style="padding:10px 14px;color:var(--text-secondary);font-weight:600;">17°13' Leo <span style="color:var(--gold);font-size:10px;font-weight:700;">PURVA PHALGUNI P.2</span></td>
+              <td style="padding:10px 14px;color:var(--text-secondary);">Purva Phalguni, Pada 2</td>
+              <td style="padding:10px 4px;text-align:center;color:var(--text-muted);">Venus</td>
+              <td style="padding:10px 14px;text-align:center;"><span style="background:var(--gold-pale);color:var(--gold);font-size:11px;font-weight:600;padding:2px 8px;border-radius:10px;">1st ★</span></td>
+            </tr>
+            <tr style="border-bottom:1px solid var(--border);">
+              <td style="padding:10px 14px;font-weight:600;color:var(--charcoal);">☀ Sun</td>
+              <td style="padding:10px 14px;color:var(--text-secondary);">3°51' Aquarius</td>
+              <td style="padding:10px 14px;color:var(--text-secondary);">9°55' Capricorn <span style="color:var(--gold);font-size:10px;font-weight:700;">OWN NAKSHATRA</span></td>
+              <td style="padding:10px 14px;color:var(--text-secondary);">Uttara Ashadha, Pada 4</td>
+              <td style="padding:10px 4px;text-align:center;color:var(--text-muted);">Sun</td>
+              <td style="padding:10px 14px;text-align:center;"><span style="background:var(--cream);color:var(--text-secondary);font-size:11px;font-weight:600;padding:2px 8px;border-radius:10px;">6th</span></td>
+            </tr>
+            <tr style="border-bottom:1px solid var(--border);background:rgba(186,117,23,0.03);">
+              <td style="padding:10px 14px;font-weight:600;color:var(--charcoal);">☽ Moon</td>
+              <td style="padding:10px 14px;color:var(--text-secondary);">~1°30' Sagittarius</td>
+              <td style="padding:10px 14px;color:var(--text-secondary);">7°34' Scorpio</td>
+              <td style="padding:10px 14px;color:var(--text-secondary);">Anuradha, Pada 2 (confirmed 21:20)</td>
+              <td style="padding:10px 4px;text-align:center;color:var(--text-muted);">Saturn</td>
+              <td style="padding:10px 14px;text-align:center;"><span style="background:var(--cream);color:var(--text-secondary);font-size:11px;font-weight:600;padding:2px 8px;border-radius:10px;">4th</span></td>
+            </tr>
+            <tr style="border-bottom:1px solid var(--border);">
+              <td style="padding:10px 14px;font-weight:600;color:var(--charcoal);">☿ Mercury</td>
+              <td style="padding:10px 14px;color:var(--text-secondary);">1°54' Aquarius <span style="color:var(--gold);font-size:10px;font-weight:700;">CONJ SUN 1°57'</span></td>
+              <td style="padding:10px 14px;color:var(--text-secondary);">7°58' Capricorn</td>
+              <td style="padding:10px 14px;color:var(--text-secondary);">Uttara Ashadha, Pada 4</td>
+              <td style="padding:10px 4px;text-align:center;color:var(--text-muted);">Sun</td>
+              <td style="padding:10px 14px;text-align:center;"><span style="background:var(--cream);color:var(--text-secondary);font-size:11px;font-weight:600;padding:2px 8px;border-radius:10px;">6th</span></td>
+            </tr>
+            <tr style="border-bottom:1px solid var(--border);background:rgba(186,117,23,0.03);">
+              <td style="padding:10px 14px;font-weight:600;color:var(--charcoal);">♀ Venus</td>
+              <td style="padding:10px 14px;color:var(--text-secondary);">18°13' Capricorn</td>
+              <td style="padding:10px 14px;color:var(--text-secondary);">22°17' Sagittarius <span style="color:var(--gold);font-size:10px;font-weight:700;">OWN NAKSHATRA</span></td>
+              <td style="padding:10px 14px;color:var(--text-secondary);">Purva Ashadha, Pada 4</td>
+              <td style="padding:10px 4px;text-align:center;color:var(--text-muted);">Venus</td>
+              <td style="padding:10px 14px;text-align:center;"><span style="background:var(--cream);color:var(--text-secondary);font-size:11px;font-weight:600;padding:2px 8px;border-radius:10px;">5th</span></td>
+            </tr>
+            <tr style="border-bottom:1px solid var(--border);">
+              <td style="padding:10px 14px;font-weight:600;color:var(--charcoal);">♂ Mars</td>
+              <td style="padding:10px 14px;color:var(--text-secondary);">18°41' Taurus</td>
+              <td style="padding:10px 14px;color:var(--text-secondary);">22°45' Aries</td>
+              <td style="padding:10px 14px;color:var(--text-secondary);">Bharani, Pada 4</td>
+              <td style="padding:10px 4px;text-align:center;color:var(--text-muted);">Venus</td>
+              <td style="padding:10px 14px;text-align:center;"><span style="background:var(--cream);color:var(--text-secondary);font-size:11px;font-weight:600;padding:2px 8px;border-radius:10px;">9th</span></td>
+            </tr>
+            <tr style="border-bottom:1px solid var(--border);background:rgba(74,123,94,0.04);">
+              <td style="padding:10px 14px;font-weight:600;color:var(--charcoal);">♃ Jupiter</td>
+              <td style="padding:10px 14px;color:var(--text-secondary);">16°30' Scorpio</td>
+              <td style="padding:10px 14px;color:var(--text-secondary);">20°34' Libra <span style="color:rgba(74,123,94,0.9);font-size:10px;font-weight:700;">VARGOTTAMA</span></td>
+              <td style="padding:10px 14px;color:var(--text-secondary);">Vishakha, Pada 1</td>
+              <td style="padding:10px 4px;text-align:center;color:var(--text-muted);">Jupiter</td>
+              <td style="padding:10px 14px;text-align:center;"><span style="background:rgba(74,123,94,0.15);color:rgba(74,123,94,0.9);font-size:11px;font-weight:700;padding:2px 8px;border-radius:10px;">3rd ✦</span></td>
+            </tr>
+            <tr style="border-bottom:1px solid var(--border);">
+              <td style="padding:10px 14px;font-weight:600;color:var(--charcoal);">♄ Saturn</td>
+              <td style="padding:10px 14px;color:var(--text-secondary);">8°11' Leo</td>
+              <td style="padding:10px 14px;color:var(--text-secondary);">12°15' Cancer <span style="color:var(--gold);font-size:10px;font-weight:700;">OWN NAKSHATRA</span></td>
+              <td style="padding:10px 14px;color:var(--text-secondary);">Pushya, Pada 2</td>
+              <td style="padding:10px 4px;text-align:center;color:var(--text-muted);">Saturn</td>
+              <td style="padding:10px 14px;text-align:center;"><span style="background:var(--cream);color:var(--text-secondary);font-size:11px;font-weight:600;padding:2px 8px;border-radius:10px;">12th</span></td>
+            </tr>
+            <tr style="border-bottom:1px solid var(--border);background:rgba(139,107,139,0.04);">
+              <td style="padding:10px 14px;font-weight:600;color:var(--charcoal);">☊ Rahu</td>
+              <td style="padding:10px 14px;color:var(--text-secondary);">7°47' Aries</td>
+              <td style="padding:10px 14px;color:var(--text-secondary);">11°51' Pisces</td>
+              <td style="padding:10px 14px;color:var(--text-secondary);">Uttara Bhadrapada, Pada 2</td>
+              <td style="padding:10px 4px;text-align:center;color:var(--text-muted);">Saturn</td>
+              <td style="padding:10px 14px;text-align:center;"><span style="background:var(--cream);color:var(--text-secondary);font-size:11px;font-weight:600;padding:2px 8px;border-radius:10px;">8th</span></td>
+            </tr>
+            <tr style="border-bottom:1px solid var(--border);">
+              <td style="padding:10px 14px;font-weight:600;color:var(--charcoal);">☋ Ketu</td>
+              <td style="padding:10px 14px;color:var(--text-secondary);">7°47' Libra</td>
+              <td style="padding:10px 14px;color:var(--text-secondary);">11°51' Virgo</td>
+              <td style="padding:10px 14px;color:var(--text-secondary);">Hasta, Pada 2</td>
+              <td style="padding:10px 4px;text-align:center;color:var(--text-muted);">Moon</td>
+              <td style="padding:10px 14px;text-align:center;"><span style="background:rgba(139,107,139,0.12);color:#8B6B8B;font-size:11px;font-weight:700;padding:2px 8px;border-radius:10px;">2nd ◈</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="sec-title">Key Placements — Interpretation</div>
+      <div class="grid2">
+        <div class="cell" style="border-left:3px solid var(--gold)">
+          <div class="cell-label">Sun + Mercury in Uttara Ashadha — Budha-Aditya Yoga</div>
+          <div class="cell-value" style="font-size:16px;">The Final Victory of the Mind</div>
+          <div class="cell-sub">Sun at 9°55' and Mercury at 7°58' Capricorn — both in Uttara Ashadha (Sun's own nakshatra), within 1°57' of each other. Budha-Aditya Yoga: when Mercury is within 7° of the Sun in the same sign, intelligence and identity fuse. For Helena, this means her mind is her most visible expression of self. She does not have intelligence — she radiates it. Uttara Ashadha is the nakshatra of sustained final victory: the elephant tusk that pierces, the march that does not stop. Both luminaries of intelligence (Sun = identity/consciousness, Mercury = mind/articulation) are in this star of invincibility.</div>
+        </div>
+        <div class="cell" style="border-left:3px solid rgba(74,123,94,0.8)">
+          <div class="cell-label">Jupiter Vargottama in Libra (3rd House) — Vishakha</div>
+          <div class="cell-value" style="font-size:16px;">The Most Powerful Planet</div>
+          <div class="cell-sub">Jupiter at 20°34' Libra sidereal — in Vishakha (Jupiter's own nakshatra), AND Vargottama (same sign in both D-1 birth chart and D-9 soul chart: Libra in both). Vargottama is the highest expression of planetary strength — zero resistance between the temporal and soul levels. Jupiter in Vishakha carries the energy of dual paths toward dharmic achievement. In the 3rd house (communication, writing, dharmic expression, skill): Jupiter Vargottama in the 3rd makes her one of the most naturally gifted communicators and teachers in her field. Her dharma expresses itself through words, teachings, and the quality of mind she brings to connection.</div>
+        </div>
+        <div class="cell" style="border-left:3px solid var(--gold)">
+          <div class="cell-label">Venus in Purva Ashadha — Own Nakshatra</div>
+          <div class="cell-value" style="font-size:16px;">Invincible Creative Power</div>
+          <div class="cell-sub">Venus at 22°17' Sagittarius sidereal, in Purva Ashadha — the nakshatra ruled by Venus (Apas, goddess of waters, invincibility). Venus in its own nakshatra is fully expressed: creative, artistically sovereign, with a quality of invincibility before the final achievement (Purva Ashadha precedes Uttara Ashadha — the Victory Before the Final Victory). She carries a fierce aesthetic intelligence and the ability to create beauty that endures. Venus in Purva Ashadha is also associated with the capacity to purify and distinguish what is worth keeping from what is noise.</div>
+        </div>
+        <div class="cell" style="border-left:3px solid var(--gold)">
+          <div class="cell-label">Saturn in Pushya — Own Nakshatra</div>
+          <div class="cell-value" style="font-size:16px;">Discipline as Nourishment</div>
+          <div class="cell-sub">Saturn at 12°15' Cancer sidereal, in Pushya — the nakshatra ruled by Saturn (Brhaspati, the teacher of gods). Pushya is considered the most auspicious of all nakshatras: nourishment, sustenance, the milk that feeds. Saturn in Pushya means her discipline is nourishing, not punishing — the kind of sustained structure that builds something real over time. Combined with Uttara Ashadha Sun: the intelligence marches, and the discipline sustains the march. Both archetypes (invincible mind, nourishing structure) work in concert.</div>
+        </div>
+        <div class="cell" style="border-left:3px solid rgba(74,123,94,0.8)">
+          <div class="cell-label">Jupiter in Vishakha — Own Nakshatra (Jupiter-Ruled)</div>
+          <div class="cell-value" style="font-size:16px;">Dual-Path Dharmic Communicator</div>
+          <div class="cell-sub">Jupiter at 20°34' Libra, in Vishakha (the Forked Branch — ruled by Jupiter and Indra). Vishakha's symbol is a triumphal archway and a potter's wheel: dual paths converging on a single purpose. She achieves through multiple approaches working simultaneously, not through a single-lane strategy. Jupiter in the 3rd house: wisdom that flows through communication, teaching, and articulation. The 3rd house is also the house of courage and initiative — Jupiter here blesses her boldness to speak, to write, to reach. Venus (ruler of Libra) is also her 3H and 10H lord, making Jupiter's 3H placement part of the career blueprint too.</div>
+        </div>
+        <div class="cell" style="border-left:3px solid rgba(139,107,139,0.6)">
+          <div class="cell-label">Ketu in Hasta (2nd House) + Rahu in Uttara Bhadrapada (8th House)</div>
+          <div class="cell-value" style="font-size:16px;">Dharma Through Transformative Depth</div>
+          <div class="cell-sub">Ketu in Hasta (Moon-ruled, the Hand nakshatra) in the 2nd house (speech, accumulated wealth, family): past-life mastery of precision, healing craft, and practical skill lives in her voice and her relationship with resources. She arrived knowing how to work. Rahu in Uttara Bhadrapada (Saturn-ruled, the cosmic serpent — depth, rain, accessing profound wisdom beneath the surface) in the 8th house (transformation, hidden power, research, the deep unknown): her North Node dharma is to develop mastery of depth — the hidden dimensions of intelligence, the transformative use of knowledge, the power that lives beneath what is visible. She is moving from surface craft toward genuine depth.</div>
+        </div>
+      </div>
+
+      <div class="divider"></div>
+      <div class="sec-title">Active Yogas</div>
+      <div class="grid4" style="margin-bottom:24px">
+        <div class="cell"><div class="cell-label">Budha-Aditya Yoga</div><div class="cell-sub">Sun + Mercury within 1°57' in Uttara Ashadha (Capricorn). Intelligence and identity fused. Recognized through the quality of mind. One of the most potent yogas for communication, recognition, and intellectual excellence.</div></div>
+        <div class="cell"><div class="cell-label">Sun in Own Nakshatra</div><div class="cell-sub">Uttara Ashadha is Sun-ruled. Sun at home in its own star: exceptional self-confidence, natural authority, solar dharmic force amplified by being in the nakshatra it governs.</div></div>
+        <div class="cell"><div class="cell-label">Venus in Own Nakshatra</div><div class="cell-sub">Purva Ashadha is Venus-ruled. Venus sovereign in its own star: creative invincibility, artistic mastery, the capacity to create beauty that endures. Aesthetic intelligence at full expression.</div></div>
+        <div class="cell"><div class="cell-label">Saturn in Own Nakshatra</div><div class="cell-sub">Pushya is Saturn-ruled. Saturn nourishing and sustaining in its own star. Discipline that feeds rather than depletes. The long-game builder whose structures become the foundation others stand on.</div></div>
+        <div class="cell"><div class="cell-label">Jupiter in Own Nakshatra</div><div class="cell-sub">Vishakha is Jupiter-ruled. Dharmic achievement through dual paths and patient persistence. Jupiter fully expressed in the career house (solar 10th): growth through wisdom and harmonious collaboration.</div></div>
+        <div class="cell"><div class="cell-label">Jupiter Vargottama</div><div class="cell-sub">Same sign (Libra) in D-1 and D-9 — the highest form of planetary strength. No resistance between the temporal and soul levels. Jupiter's gifts flow through her with maximum ease and minimum interference. The most powerful planet in her chart.</div></div>
+        <div class="cell"><div class="cell-label">4 of 7 Planets in Own Nakshatras</div><div class="cell-sub">Sun, Venus, Saturn, Jupiter are all in their own or self-ruled nakshatras. Having four planets in this configuration at birth is rare. It suggests a chart with unusually direct access to the highest expression of each planet's gifts — less karmic distortion, more natural flow.</div></div>
+        <div class="cell"><div class="cell-label">Ketu in Hasta (2nd House)</div><div class="cell-sub">Hasta is Moon-ruled, associated with precise craftsmanship and healing. Ketu in the 2nd house (speech, wealth, accumulated skill): her voice carries past-life mastery. The spiritual heritage is embodied knowledge expressed through precision of speech and the capacity to make things with her hands and mind.</div></div>
+      </div>
+    </div>
+
+    <!-- NAVAMSA D-9 -->
+    <div class="card">
+      <div class="card-hd">
+        <div class="card-icon">◉</div>
+        <div>
+          <div class="card-title">Navamsa Chart (D-9): Soul-Level Signature</div>
+          <div class="card-sub">Each rasi divided into 9 equal parts of 3°20'. Reveals the soul's deepest pattern, relationship themes, and what ripens in the second half of life. Computed via Swiss Ephemeris + Lahiri Ayanamsa.</div>
+        </div>
+      </div>
+
+      <div style="overflow-x:auto;margin-bottom:24px;">
+        <table style="width:100%;border-collapse:collapse;font-size:13px;">
+          <thead>
+            <tr style="background:var(--cream);border-bottom:2px solid var(--border);">
+              <th style="padding:10px 14px;text-align:left;font-size:10px;text-transform:uppercase;letter-spacing:0.1em;color:var(--text-muted);font-weight:600;">Planet</th>
+              <th style="padding:10px 14px;text-align:left;font-size:10px;text-transform:uppercase;letter-spacing:0.1em;color:var(--text-muted);font-weight:600;">D-1 Sign</th>
+              <th style="padding:10px 14px;text-align:left;font-size:10px;text-transform:uppercase;letter-spacing:0.1em;color:var(--text-muted);font-weight:600;">D-9 Sign</th>
+              <th style="padding:10px 14px;text-align:left;font-size:10px;text-transform:uppercase;letter-spacing:0.1em;color:var(--text-muted);font-weight:600;">Soul Signature</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="border-bottom:1px solid var(--border);background:rgba(186,117,23,0.04);">
+              <td style="padding:10px 14px;font-weight:600;color:var(--charcoal);">Ascendant</td>
+              <td style="padding:10px 14px;color:var(--text-secondary);">Leo (D-1 Lagna)</td>
+              <td style="padding:10px 14px;font-weight:700;color:var(--charcoal);">Gemini <span style="color:rgba(74,123,94,0.9);font-size:10px;font-weight:700;">MERCURY LAGNA</span></td>
+              <td style="padding:10px 14px;color:var(--text-secondary);font-size:12px;">Gemini D-9 Ascendant with Mercury in own sign in the D-9 Lagna: at the soul level, Mercury is not just strong — it IS the chart. The soul's self-expression, purpose, and lens on reality are fundamentally Mercurian. The mind that she IS at the temporal level (Leo D-1, Sun as chart ruler with Budha-Aditya Yoga) is also the soul's home (Gemini D-9, Mercury as chart ruler, in own sign). Two levels, one truth: she is defined by intelligence.</td>
+            </tr>
+            <tr style="border-bottom:1px solid var(--border);">
+              <td style="padding:10px 14px;font-weight:600;color:var(--charcoal);">☀ Sun</td>
+              <td style="padding:10px 14px;color:var(--text-secondary);">Capricorn (Uttara Ashadha)</td>
+              <td style="padding:10px 14px;color:var(--text-secondary);">Gemini <span style="color:var(--gold);font-size:10px;font-weight:700;">MERCURY-RULED</span></td>
+              <td style="padding:10px 14px;color:var(--text-secondary);font-size:12px;">At the soul level, her solar identity is fundamentally a communicating, connecting, synthesizing mind. The Capricorn D-1 Sun (disciplined authority) flows through a Gemini D-9 soul (versatile intelligence). She is sovereign through how she thinks, not through how she commands.</td>
+            </tr>
+            <tr style="border-bottom:1px solid var(--border);background:rgba(186,117,23,0.03);">
+              <td style="padding:10px 14px;font-weight:600;color:var(--charcoal);">☽ Moon</td>
+              <td style="padding:10px 14px;color:var(--text-secondary);">Scorpio (Anuradha)</td>
+              <td style="padding:10px 14px;color:var(--text-secondary);">Pisces <span style="color:rgba(74,123,94,0.9);font-size:10px;font-weight:700;">JUPITER-RULED</span></td>
+              <td style="padding:10px 14px;color:var(--text-secondary);font-size:12px;">Moon in Pisces D-9: at the soul level, her emotional nature is oceanic — empathic, spiritually porous, capable of feeling the full spectrum of human experience. Jupiter rules Pisces, and Jupiter is Vargottama in this chart, making Jupiter's influence on the soul Moon very strong. The soul's emotional intelligence is vast, fluid, and deeply intuitive. The challenge: maintaining inner boundaries when the ocean of feeling becomes undifferentiated. The gift: she senses what others cannot articulate, and this knowing becomes wisdom when paired with Mercury's precision.</td>
+            </tr>
+            <tr style="border-bottom:1px solid var(--border);">
+              <td style="padding:10px 14px;font-weight:600;color:var(--charcoal);">☿ Mercury</td>
+              <td style="padding:10px 14px;color:var(--text-secondary);">Capricorn (Uttara Ashadha)</td>
+              <td style="padding:10px 14px;font-weight:700;color:var(--charcoal);">Gemini <span style="color:rgba(74,123,94,0.9);font-size:10px;font-weight:700;">OWN SIGN</span></td>
+              <td style="padding:10px 14px;color:var(--text-secondary);font-size:12px;">Mercury in own sign in D-9. The mind at the soul level is in its natural home — free, precise, and fully expressed. Combined with Sun also in Gemini D-9: both Sun and Mercury are in Gemini at the soul level. The double Gemini signature confirms that Helena's soul purpose is fundamentally communicative, intellectual, and connective.</td>
+            </tr>
+            <tr style="border-bottom:1px solid var(--border);background:rgba(186,117,23,0.03);">
+              <td style="padding:10px 14px;font-weight:600;color:var(--charcoal);">♀ Venus</td>
+              <td style="padding:10px 14px;color:var(--text-secondary);">Sagittarius (Purva Ashadha)</td>
+              <td style="padding:10px 14px;color:var(--text-secondary);">Aries <span style="color:var(--text-muted);font-size:10px;font-weight:700;">MARS-RULED</span></td>
+              <td style="padding:10px 14px;color:var(--text-secondary);font-size:12px;">Venus in Aries D-9: the soul's love nature expresses through independence, assertion, and pioneering love rather than receptive love. She gives love by going first, by being bold in affection, by not waiting to be chosen. The learning is to also receive love with the same openness she gives it. Note: Aries is not Venus's debilitation sign (that is Virgo) — this is a Mars-ruled placement that redirects Venusian softness into directness.</td>
+            </tr>
+            <tr style="border-bottom:1px solid var(--border);">
+              <td style="padding:10px 14px;font-weight:600;color:var(--charcoal);">♂ Mars</td>
+              <td style="padding:10px 14px;color:var(--text-secondary);">Aries (Bharani)</td>
+              <td style="padding:10px 14px;color:var(--text-secondary);">Libra <span style="color:var(--text-muted);font-size:10px;font-weight:700;">VENUS-RULED</span></td>
+              <td style="padding:10px 14px;color:var(--text-secondary);font-size:12px;">Mars in Libra D-9: the soul's action mode is through harmony, partnership, and balance. The warrior energy at the soul level serves through creating agreement, not through conquest. She is most effective in action when she is building something beautiful with others, not fighting alone. Note: Libra is not Mars's debilitation sign (that is Cancer) — this is a Venus-ruled placement that softens Mars's directness into relational effectiveness.</td>
+            </tr>
+            <tr style="border-bottom:1px solid var(--border);background:rgba(74,123,94,0.04);">
+              <td style="padding:10px 14px;font-weight:600;color:var(--charcoal);">♃ Jupiter</td>
+              <td style="padding:10px 14px;color:var(--text-secondary);">Libra (Vishakha)</td>
+              <td style="padding:10px 14px;font-weight:700;color:var(--charcoal);">Libra <span style="color:rgba(74,123,94,0.9);font-size:10px;font-weight:700;">VARGOTTAMA</span></td>
+              <td style="padding:10px 14px;color:var(--text-secondary);font-size:12px;">Jupiter in same sign in D-1 and D-9 — Vargottama. This is the most powerful Jupiter configuration possible outside of exaltation. Dharmic wisdom, harmonious growth, and the capacity to expand through beautiful relationships are expressed without resistance at both the temporal and soul levels. Jupiter is the undisputed peak planet of this chart.</td>
+            </tr>
+            <tr style="border-bottom:1px solid var(--border);">
+              <td style="padding:10px 14px;font-weight:600;color:var(--charcoal);">♄ Saturn</td>
+              <td style="padding:10px 14px;color:var(--text-secondary);">Cancer (Pushya)</td>
+              <td style="padding:10px 14px;color:var(--text-secondary);">Cancer <span style="color:var(--text-muted);font-size:10px;font-weight:700;">ENEMY SIGN</span></td>
+              <td style="padding:10px 14px;color:var(--text-secondary);font-size:12px;">Saturn in Cancer D-9: the soul's discipline encounters emotional vulnerability as its curriculum. Cancer is Moon-ruled, and Moon is Saturn's natural enemy — structure meets feeling, and the learning is to hold both without collapsing one for the other. Stability that includes tenderness is stronger than stability that excludes it. Note the productive tension with D-1 Saturn in Pushya (own nakshatra, strong): at the temporal level Saturn is fortified; at the soul level it is asked to be soft. Note: Cancer is not Saturn's debilitation sign (that is Aries).</td>
+            </tr>
+            <tr style="border-bottom:1px solid var(--border);background:rgba(186,117,23,0.03);">
+              <td style="padding:10px 14px;font-weight:600;color:var(--charcoal);">☊ Rahu</td>
+              <td style="padding:10px 14px;color:var(--text-secondary);">Pisces (Uttara Bhadrapada)</td>
+              <td style="padding:10px 14px;color:var(--text-secondary);">Capricorn</td>
+              <td style="padding:10px 14px;color:var(--text-secondary);font-size:12px;">Rahu in Capricorn D-9: the soul's expansive destiny moves toward structured achievement, mastery, and the kind of success that is built over time. The North Node's deepest hunger at the soul level is for real, lasting accomplishment — not fame or sensation but genuine earned mastery.</td>
+            </tr>
+            <tr style="border-bottom:1px solid var(--border);">
+              <td style="padding:10px 14px;font-weight:600;color:var(--charcoal);">☋ Ketu</td>
+              <td style="padding:10px 14px;color:var(--text-secondary);">Virgo (Hasta)</td>
+              <td style="padding:10px 14px;color:var(--text-secondary);">Capricorn</td>
+              <td style="padding:10px 14px;color:var(--text-secondary);font-size:12px;">Ketu in Capricorn D-9: both nodes (Rahu and Ketu) are in Capricorn in the D-9. The entire nodal axis — past and future, release and expansion — is Capricorn at the soul level. Structured achievement, disciplined mastery, and the willingness to build something that endures are the soul's north star, south point, and everything between.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="highlight" style="border-color:rgba(74,123,94,0.35);background:rgba(74,123,94,0.04)">
+        <div class="highlight-headline" style="font-size:22px">Triple Gemini D-9 Pattern: Soul as Pure Intelligence</div>
+        <div class="highlight-body">Sun, Mercury, and the D-9 Ascendant are all in Gemini in the soul chart. Mercury is in its own sign, ruling the D-9 Lagna, sitting in the Lagna. This is an extraordinary configuration: at the soul level, the chart ruler (Mercury) is in its own sign in the first house. There is no distortion, no translation needed. The soul IS a mind — agile, connecting, synthesizing. The Capricorn D-1 gives her the temporal expression (discipline, authority, the sustained march). The Gemini D-9 gives her the soul's deepest home: intelligence that finds its own kind and illuminates the connection between them. Mercury Mahadasha, which has been running since December 2018, is the 17-year period when this soul truth is given full temporal stage.</div>
+      </div>
+
+      <div class="grid2" style="margin-bottom:0">
+        <div class="cell" style="border-left:3px solid var(--gold)">
+          <div class="cell-label">Sun + Mercury + D-9 ASC in Gemini: The Soul's Complete Identity</div>
+          <div class="cell-sub">At the soul level, she is a Gemini — identity, mind, and lens on reality are all Mercurian. The Leo D-1 Ascendant presents the radiant, commanding exterior. The Gemini D-9 reveals the curious, connective, bridge-building soul beneath it. Mercury in own sign in the D-9 Lagna: no karmic distortion in how the soul-level intelligence expresses. It is exactly what it is.</div>
+        </div>
+        <div class="cell" style="border-left:3px solid rgba(74,123,94,0.8)">
+          <div class="cell-label">Jupiter Vargottama: The Soul's Anchor</div>
+          <div class="cell-sub">Jupiter does not change between D-1 and D-9. Libra Vishakha in both. This is the one energy in her chart that requires no translation between temporal and soul levels — what Jupiter gives her in daily life is exactly what it gives her at the soul level. Dharmic harmonious expansion through communication and wisdom. The easiest thing she can do is also the most dharmic thing she can do.</div>
+        </div>
+        <div class="cell" style="border-left:3px solid rgba(139,107,139,0.6)">
+          <div class="cell-label">Rahu AND Ketu Both in Capricorn D-9</div>
+          <div class="cell-sub">The entire nodal axis collapses into Capricorn at the soul level. Past (Ketu) and destiny (Rahu) are both pointing the same direction: structured mastery, real achievement, the earned kind. She did not come here to be famous quickly. She came here to build something that lasts — and then teach others how.</div>
+        </div>
+        <div class="cell" style="border-left:3px solid rgba(186,117,23,0.5)">
+          <div class="cell-label">Moon D-9 in Pisces: The Ocean Beneath the Mind</div>
+          <div class="cell-sub">Moon in Pisces D-9: at the soul level, her emotional intelligence is oceanic and deeply empathic. Jupiter rules Pisces — and Jupiter Vargottama in this chart means the soul Moon has extraordinary intuitive depth and the capacity to sense what others cannot articulate. The gift: knowing beyond knowing. The practice: boundaries in the ocean so the feeling becomes wisdom rather than overwhelm.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- DASHA -->
+    <div class="card">
+      <div class="card-hd">
+        <div class="card-icon">⚡</div>
+        <div>
+          <div class="card-title">Current Dasha Period</div>
+          <div class="card-sub">Mercury Mahadasha · December 2018–December 2035 · Mercury/Moon antardasha active now</div>
+        </div>
+      </div>
+      <div class="highlight" style="border-color:rgba(186,117,23,0.45)">
+        <div class="highlight-headline">7 Years In — and Now Entering the Emotional Chapter</div>
+        <div class="highlight-body">Saturn Mahadasha ran from birth to December 2018 — her entire childhood through age 12. Those years were the formation: Saturn in Pushya (nourishing discipline) building the foundation of someone who earns everything through sustained, unglamorous effort. Mercury Mahadasha opened at age 12 (December 2018) and has been quietly running her intelligence arc ever since. She has already completed Mercury/Mercury (the pure opening, ages 12–15), Mercury/Ketu (spiritual deepening, 15–16), Mercury/Venus (creative bloom, 16–19), and Mercury/Sun (authority and recognition, age 19–20). Now: Mercury/Moon antardasha (January 2026 – June 2027). Moon sits in her 4th house (Scorpio/Anuradha): the intelligence is turning toward emotional depth, home, inner knowing, and the deep feeling that strategy needs to be grounded in. She is not at the dawn of this 17-year period. She is mid-arc, and everything she has built since age 12 is now being asked to meet her emotional truth.</div>
+      </div>
+      <div class="grid2" style="margin-bottom:0">
+        <div class="cell" style="border:1.5px solid var(--gold);background:rgba(186,117,23,0.04)"><div class="cell-label" style="color:var(--gold)">Active Now: Mercury/Moon (January 2026 – June 2027)</div><div class="cell-sub">Moon in the 4th house (Scorpio/Anuradha): the intelligence turns inward. This is the antardasha of emotional intelligence, home, roots, and the deep knowing that lives in the body rather than the mind. For someone with Budha-Aditya Yoga, this period is a specific invitation: let the mind be informed by feeling, not just the other way around. Anuradha's themes — devotion, friendship, perseverance in the face of difficulty — add depth to her strategic work. What she builds now has roots.</div></div>
+        <div class="cell" style="border:1px solid rgba(139,107,139,0.3);background:rgba(139,107,139,0.03)"><div class="cell-label" style="color:#8B6B8B">Next: Mercury/Mars (June 2027 – June 2028)</div><div class="cell-sub">Mars in the 9th house (Aries/Bharani): the dharmic warrior. Mercury/Mars is the intelligence moving into action, courage, and bold initiation. After the inward emotional chapter (Moon), Mars pushes the work into direct action. This is the year to move on what she has been feeling. Mars rules her 4th and 9th houses — making this a period where home and dharma both get activated through decisive intelligence.</div></div>
+        <div class="cell"><div class="cell-label">Mercury/Rahu (June 2028 – January 2031)</div><div class="cell-sub">Rahu in the 8th house (Pisces/Uttara Bhadrapada): expansion into transformation, hidden knowledge, and depth. Mercury/Rahu within Mercury Mahadasha is typically the most ambitious and expansive chapter — Rahu amplifies Mercury's reach. This is when her intelligence touches its furthest horizon. Ages 22–25. Her Jupiter Return (~2030) also arrives in this window: Jupiter returning to Libra sidereal, completing its first full 12-year cycle. Vargottama Jupiter returning to its birth position: a significant dharmic reset.</div></div>
+        <div class="cell"><div class="cell-label">Mercury/Jupiter (January 2031 – May 2033)</div><div class="cell-sub">Jupiter Vargottama — the strongest planet in her chart — as antardasha lord within Mercury Mahadasha. Mercury/Jupiter: intelligence and wisdom in full synthesis. Teaching, mentoring, building something of genuine philosophical depth. This is likely the period where what she has been building since age 12 becomes visible as a body of work rather than a collection of outputs. Ages 25–27. Jupiter rules 5H and 8H from Leo ASC — creativity and depth, both activated.</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CYCLE PHASE -->
+  <div id="cycle" class="section">
+    <div class="pending-block" style="margin-bottom:24px">
+      <strong style="color:var(--gold)">Cycle tracking not yet added.</strong> To activate this section, provide Helena's most recent period start date and average cycle length. Phase guidance below is tailored to her HD design (Generator with Emotional Authority) and can be used as a general reference.
+    </div>
+
+    <div class="card">
+      <div class="card-hd">
+        <div class="card-icon">🌿</div>
+        <div>
+          <div class="card-title">Cycle Phase Guidance — For Helena's Design</div>
+          <div class="card-sub">Generator · Emotional Authority · Gene Key 46 (Exquisiteness) · Uttara Ashadha Sun</div>
+        </div>
+      </div>
+
+      <div class="body-text">These descriptions are calibrated to Helena's specific energetic design — not generic phase archetypes. The Generator's Sacral energy moves differently through each phase than a Projector's. The Emotional Authority adds a layer: her emotional wave has its own rhythm that may not sync with the calendar cycle. Both are real. Both carry information.</div>
+
+      <div class="phase-card menstrual">
+        <div class="phase-name" style="color:#8B6B8B">❄ Menstrual — Winter (Days 1–5)</div>
+        <div class="phase-body"><strong>Archetype for Helena:</strong> The Oracle Who Has Been There Before. Ketu in Hasta (the craftswoman, the healer) in her 9th house comes alive in winter — past-life knowledge surfaces. The Sacral power drops to a whisper, but the depth of perception rises. The Budha-Aditya Yoga (mind-identity fusion) operates at its most inward and prophetic in this phase — she may receive insights that feel almost given, not earned. Do not try to articulate them yet. They need spring to become shareable.<br><br><strong>Emotional Authority note:</strong> The menstrual phase creates a naturally lower emotional tone. Major decisions made in winter are often colored by the trough of the wave, not the actual truth. Receive. Record. Wait until Spring Follicular to evaluate what arrived.</div>
+      </div>
+
+      <div class="phase-card follicular">
+        <div class="phase-name" style="color:#4A7B5E">🌱 Follicular — Spring (Days 6–14)</div>
+        <div class="phase-body"><strong>Archetype for Helena:</strong> The Invincible Beginner. Uttara Ashadha Sun + rising estrogen: the march forward resumes with full energy. Gate 34 (Power) rises. This is her most naturally confident phase — the clarity of winter has been processed and now the Sacral is building. New projects, new conversations, new drafts: spring is when the intelligence becomes actionable.<br><br><strong>For her design:</strong> The emotional wave typically rises in follicular. She may feel YES to many things. Budha-Aditya Yoga makes her articulation especially sharp here. Best window for first drafts, new conversations, pitching ideas, and beginning what she envisioned in winter. Verify the YES against her full wave before committing.</div>
+      </div>
+
+      <div class="phase-card ovulatory">
+        <div class="phase-name" style="color:#BA7517">☀ Ovulatory — Summer (Days 15–19)</div>
+        <div class="phase-body"><strong>Archetype for Helena:</strong> The Undefeated Voice. Venus in Purva Ashadha (invincibility) + peak estrogen + Gate 34 at full output: this is her most magnetically powerful window. Gate 59 (Intimacy) is most accessible — she breaks down barriers and creates genuine connection effortlessly. Jupiter Vargottama (harmonious expansion) has its temporal peak here.<br><br><strong>For her design:</strong> This is the window for visibility, teaching, presenting, high-stakes conversations, and public expression. The 5-line carries universal appeal at its strongest in ovulation. What she says in summer reaches furthest. Gate 38 (Perseverance toward Honor) — even if she feels the most powerful here, the vocation theme is about sustained commitment, not peak performance. Peak is the signal, not the whole story.</div>
+      </div>
+
+      <div class="phase-card luteal">
+        <div class="phase-name" style="color:#7B5A3E">🍂 Luteal — Autumn (Days 20 onward)</div>
+        <div class="phase-body"><strong>Archetype for Helena:</strong> The Ruthless Editor. Gene Key 16 (Versatility toward Mastery) activates most clearly here: the discernment of what stays and what goes. Gate 34 shadow (Force) is most likely to appear in late Luteal — the sense of pushing through when the body is asking for completion not initiation. Saturn in Pushya (nourishing discipline) is the energy to access: structure that sustains, not strain.<br><br><strong>For her design:</strong> Protect the late Luteal. No new launches in days 26+. Finish, refine, and edit what is already in motion. The Emotional Authority wave typically drops in late luteal — this is not the moment to make permanent decisions from the feeling of depletion. The feeling passes. The decision would not.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DECISION AUDIT -->
+  <div id="decision" class="section">
+    <div class="card">
+      <div class="card-hd">
+        <div class="card-icon">⚖</div>
+        <div>
+          <div class="card-title">Decision Audit</div>
+          <div class="card-sub">Emotional Authority · Generator Strategy · Mercury Mahadasha · Gene Key 34</div>
+        </div>
+      </div>
+
+      <div class="body-text">Helena's decision architecture has two layers: the Generator's Sacral response (body-first, yes/no before the mind forms an opinion) AND the Emotional Authority wave (don't decide at the peak or trough — wait for neutral clarity). These two layers work together. The Sacral gives the initial signal. The emotional wave confirms or dissolves it over time. Both must agree for a real yes.</div>
+
+      <div class="highlight" style="border-color:rgba(74,123,94,0.35);background:rgba(74,123,94,0.04)">
+        <div class="highlight-headline" style="font-size:20px">The Emotional Authority Protocol: The Wave Is the Answer</div>
+        <div class="highlight-body">Emotional Authority means clarity does not arrive in the peak of excitement or the trough of doubt — it arrives in the neutral space between them. When something excites Helena intensely, that is data, not a decision. When something devastates her, that is also data, not a decision. The question is: three days later, three emotional states later, is she still clear? If yes, that is the true signal. If no, the wave washed it away for a reason. The practice: when a major decision presents itself, note the first body response (the Sacral), wait out the emotional arc (high — neutral — low — neutral again), and decide from the neutral space. "I still feel yes even from the bottom" is the green light.</div>
+      </div>
+
+      <div class="sec-title">Helena's Specific Decision Filter</div>
+      <div class="audit-grid">
+        <div class="audit-cell">
+          <div class="audit-q">1. What is my Sacral saying before my mind speaks?</div>
+          <div class="audit-a">Gate 34 (Sacral center): the body knows before the mind. The first gut lift or gut drop — before she builds a case, before she considers what others will think — is the Sacral's voice. Practice noticing it. "Mmh-hmm" (yes) or "uh-uh" (no) — pre-verbal, pre-rational. This is the first data point, not the only one.</div>
+        </div>
+        <div class="audit-cell">
+          <div class="audit-q">2. Where am I on the emotional wave right now?</div>
+          <div class="audit-a">Emotional Authority requires wave awareness. Is she in the high? (don't decide — the excitement may not survive the dip.) In the low? (don't decide — the doubt may not survive the rise.) In neutral? This is the truth zone. Neutral after high AND after low: that's where the real answer lives.</div>
+        </div>
+        <div class="audit-cell">
+          <div class="audit-q">3. Is the Budha-Aditya mind helping or overriding?</div>
+          <div class="audit-a">Mercury + Sun conjunct = her mind is extraordinarily capable and extraordinarily convincing — to herself as much as to others. She can build a brilliant case for something the Sacral has already said no to. Check: is the mental argument running AHEAD of the body signal, or EXPLAINING a body signal that already arrived? The mental argument alone is not the authority.</div>
+        </div>
+        <div class="audit-cell">
+          <div class="audit-q">4. Does this ask me to persist or to flee?</div>
+          <div class="audit-a">Gene Key 38 (Perseverance toward Honor): her vocation is built on staying. But perseverance is only a gift when what she is staying for is genuinely hers. The question is not "can I endure this?" It is "does the Sacral still say yes to this?" If the answer is yes and it is hard: persist. If the answer is no and it is hard: the difficulty is telling her something the mind hasn't caught up to yet.</div>
+        </div>
+      </div>
+
+      <div class="divider"></div>
+      <div class="sec-title">Mercury Mahadasha Decision Context (2018–2035)</div>
+      <div style="background:rgba(186,117,23,0.06);border:1px solid rgba(186,117,23,0.2);border-radius:12px;padding:20px 24px;font-size:13.5px;color:var(--text-secondary);line-height:1.75;">
+        <strong style="color:var(--gold)">During Mercury Mahadasha:</strong> The Budha-Aditya Yoga amplifies the mind's role in every decision. The risk: making decisions from the mind's clarity while bypassing the Sacral and emotional wave entirely. Mercury's gift (intelligence, analysis, articulation) is most useful in the EVALUATION phase — after the Sacral has responded and the emotional wave has been ridden — not in place of them. Intelligence is a gift. It is not the authority. The authority is the body, riding the wave.
+      </div>
+    </div>
+  </div>
+
+  <!-- SHADOW CHECK -->
+  <div id="shadow" class="section">
+    <div class="card">
+      <div class="card-hd">
+        <div class="card-icon">◈</div>
+        <div>
+          <div class="card-title">Shadow Check</div>
+          <div class="card-sub">The five patterns that cost Helena most — know them before they move</div>
+        </div>
+      </div>
+
+      <div class="shadow-item">
+        <div class="shadow-icon">⚡</div>
+        <div>
+          <div class="shadow-lbl">Shadow 1 · Gate 34 — Force</div>
+          <div class="shadow-text"><strong>Power that proves itself through effort.</strong> Gate 34's shadow is Force — the use of the Sacral's tremendous energy to push through resistance rather than move through alignment. When Helena is in Force, everything requires more effort than it should, and the energy output exceeds what the situation deserves. Recognition: strain, urgency, the sense that if she just pushes harder it will work. The shadow activates when she feels she needs to demonstrate power rather than rest in it. Strength does not need to try. When she notices trying, the question is: what is she trying to prove, and to whom?</div>
+        </div>
+      </div>
+
+      <div class="shadow-item">
+        <div class="shadow-icon">👁</div>
+        <div>
+          <div class="shadow-lbl">Shadow 2 · Profile 3/6 — Making the Mistake Mean Too Much</div>
+          <div class="shadow-text"><strong>Letting what didn't work become the story of who she is.</strong> The Line 3 curriculum is trial, error, and discovery through living it. The shadow is when the errors become evidence of something wrong with her, rather than data about what doesn't fit. Phase 1 for a 3/6 includes bonds that break, paths that dead-end, experiments that fail — this is not pathology, it is the design. The practice: hold what didn't work as information, not as verdict. The other side of this shadow is using the mistakes as a shield — staying in self-deprecation to avoid the vulnerability of committing fully to the next thing. The Line 3 is meant to try, fail, and try again. Not to protect itself from the trying.</div>
+        </div>
+      </div>
+
+      <div class="shadow-item">
+        <div class="shadow-icon">☿</div>
+        <div>
+          <div class="shadow-lbl">Shadow 3 · Budha-Aditya Yoga — The Mind That Overrides</div>
+          <div class="shadow-text"><strong>Intelligence as the only authority in the room.</strong> Mercury conjunct Sun in Uttara Ashadha: her mind is extraordinarily capable and, most dangerously, extraordinarily convincing — to herself. The Budha-Aditya shadow is the mind that builds a brilliant rational case for what the Sacral has already declined, and then executes on the case. This shows up as: overriding body signals with analysis, overriding the emotional wave with logic, overriding others' perspectives because her argument is simply more coherent. Intelligence is the instrument, not the authority. The shadow activates when the instrument believes it is the player.</div>
+        </div>
+      </div>
+
+      <div class="shadow-item">
+        <div class="shadow-icon">◈</div>
+        <div>
+          <div class="shadow-lbl">Shadow 4 · Uttara Ashadha — Rigidity</div>
+          <div class="shadow-text"><strong>The final word becomes the only word.</strong> Uttara Ashadha's "final victory" quality — the sustained march, the invincible commitment — is among her greatest gifts. Its shadow: the refusal to update. When new information arrives that should shift the direction, Uttara Ashadha stubbornness holds the original position not from wisdom but from an aversion to being wrong. The distinction between persistence (staying because the Sacral still says yes) and rigidity (staying because changing would mean admitting the original course was wrong) is the critical line. Gene Key 38 (Perseverance toward Honor) has the same shadow: when perseverance becomes a shield against necessary change.</div>
+        </div>
+      </div>
+
+      <div class="shadow-item">
+        <div class="shadow-icon">🌊</div>
+        <div>
+          <div class="shadow-lbl">Shadow 5 · Gate 55 — Victimization</div>
+          <div class="shadow-text"><strong>Waiting for circumstances to be right before allowing freedom.</strong> Gate 55's shadow (Victimization) is the deeply embedded belief that external conditions determine whether she can feel free. The pattern: "when X changes, I can relax. When Y is in place, I can fully commit. When Z stops, I can finally be myself." The freedom she seeks is not downstream of circumstances — it is a relationship she has with herself regardless of circumstances. This shadow is particularly active during difficult outer conditions (difficult colleagues, resource constraints, relationship friction) when the temptation is to assign her state to the external rather than locate it internally. The Gift of Freedom is available now, not later. Gate 55 at gift frequency does not wait for conditions. It generates its own climate.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2026 ACTIVATION -->
+  <div id="activation" class="section">
+    <div class="card">
+      <div class="card-hd">
+        <div class="card-icon">☀</div>
+        <div>
+          <div class="card-title">2026 Activation</div>
+          <div class="card-sub">Mercury Mahadasha mid-arc · Mercury/Moon antardasha now · 7 years of the intelligence era already lived</div>
+        </div>
+      </div>
+
+      <div class="highlight">
+        <div class="highlight-headline">Seven Years In — What Has Already Been Built</div>
+        <div class="highlight-body">Mercury Mahadasha opened in December 2018 when Helena was 12. That's the moment the intelligence era began — not 2026. By age 20, she has already lived through four complete antardashas: Mercury/Mercury (the pure opening, ages 12–15), Mercury/Ketu (spiritual depth and intuition, 15–16), Mercury/Venus (creative bloom and relational depth, 16–19), and Mercury/Sun (authority and recognition — Budha-Aditya Yoga's Lagna lord peak, 19–20). What she is carrying into 2026 is not the beginning of Mercury's gifts. It is 7 years of them, already built into her. Mercury/Moon antardasha (January 2026 – June 2027) is now asking that all of this — the intelligence, the creativity, the authority — connect to emotional truth. The current activation is not initiation. It is integration.</div>
+      </div>
+
+      <div class="grid2">
+        <div class="cell">
+          <div class="cell-label">What Mercury/Moon Is Activating (January 2026 – June 2027)</div>
+          <div class="cell-sub">Moon in 4H (Scorpio/Anuradha): home, emotional foundation, inner world, the private self beneath the Leo ASC's presentation. The activation right now is not external output — it is internal grounding. What can she build on if the foundation is her own emotional knowing rather than inherited or performed structure? Gate 34 (Power): the Sacral knows what is genuine. Mercury/Moon is the antardasha where that knowing is given permission to shape what the intelligence does next.</div>
+        </div>
+        <div class="cell">
+          <div class="cell-label">Jupiter Transit in 2026 (Leo ASC)</div>
+          <div class="cell-sub">Jupiter transiting through Gemini/Cancer sidereal in 2026 (approximately 11th and 12th houses from Leo ASC). Jupiter transiting the 11th house: gains, networks, aspirations, elder connections. Jupiter transiting the 12th house: deep spiritual work, foreign lands, hidden resources. Check current Jupiter ephemeris for exact house position. The Jupiter Return to Libra (3H natal, Vargottama) arrives around 2030 — that is the next major dharmic career reset.</div>
+        </div>
+        <div class="cell">
+          <div class="cell-label">What to Initiate in Mercury/Moon</div>
+          <div class="cell-sub">Deep creative work that has emotional roots. Projects that serve people at the level of feeling, not just thinking. Collaborations grounded in genuine emotional trust. Anything that brings her intelligence closer to her body's knowing. Gene Key 16 (Indifference toward Mastery): Mercury/Moon is the antardasha where the mastery she has been developing since age 12 gets tested for whether it is alive (felt) or merely competent (performed). Only the felt version becomes transmission.</div>
+        </div>
+        <div class="cell">
+          <div class="cell-label">What to Watch</div>
+          <div class="cell-sub">The Budha-Aditya mind can use Mercury/Moon's emotional opening to quickly "analyze" what she feels rather than actually feeling it. The shadow: processing the feeling into a framework before the feeling has delivered its full message. Emotional Authority reminder: the wave runs its full cycle — high, low, neutral — before clarity arrives. Mercury/Moon antardasha is specifically asking her NOT to do what the Budha-Aditya Yoga does best. The intelligence is meant to serve the feeling here, not replace it.</div>
+        </div>
+      </div>
+
+      <div class="divider"></div>
+      <div class="sec-title">Saturn's Legacy: What She Carried Forward Into Mercury MD</div>
+      <div class="body-text">Saturn Mahadasha (birth to December 2018) gave her 12 years of formation. Saturn in Pushya (own nakshatra, 12th house from Leo ASC) built the capacity for sustained, unglamorous effort from a private or hidden place — not glamorous public discipline but deep structural integrity. The understanding that things take the time they take. The relationship with patience that comes from having had no choice but to move slowly during childhood. These are not liabilities carried into Mercury. They are the substrate Mercury has been building on since she was 12. The intelligence of Budha-Aditya Yoga without the discipline of Saturn's legacy produces brilliant ideas that don't survive contact with reality. She has both.</div>
+    </div>
+  </div>
+
+  <!-- SOUL'S WORK & ROLE -->
+  <div id="ventures" class="section">
+    <div class="hero">
+      <span class="hero-sigil">◉</span>
+      <div class="hero-kicker">Sisterhood OS · Saha Synergy · Co-Founder</div>
+      <div class="hero-title">The Mind That<br>Shapes the Mission</div>
+      <div class="hero-body">"She does not decorate what Sophia builds. She thinks it into its next form. The strategy is not downstream of the vision — it is part of how the vision becomes real."</div>
+    </div>
+
+    <div class="card">
+      <div class="card-hd">
+        <div class="card-icon">◉</div>
+        <div>
+          <div class="card-title">What Her Chart Says About Her Co-Founder Role</div>
+          <div class="card-sub">Strategy + Marketing · Budha-Aditya Yoga · Jupiter Vargottama in Libra · Profile 3/6</div>
+        </div>
+      </div>
+
+      <div class="highlight">
+        <div class="highlight-headline">Strategy is her dharma, not her job title.</div>
+        <div class="highlight-body">Helena handles strategy and marketing for Sisterhood OS. Her chart confirms this is not a role she was assigned because she was available — it is the clearest expression of who she is designed to be. Budha-Aditya Yoga: intelligence and identity fused, recognized through articulation. Jupiter Vargottama in Libra (harmonious, dharmic, beautiful strategy): her strategic thinking naturally tends toward elegant solutions rather than blunt ones. Gate 41 (Anticipation at the Root level): her strategy has a forward-sensing quality — she reads what wants to emerge before it has fully formed. Profile 3/6 (earned authority, living proof): what she creates carries the weight of someone who has actually done the work, not just thought about it. The mission she is helping build is larger than what either woman can see from where they stand. Her role is to keep the thinking clear enough that the vision can grow into it.</div>
+      </div>
+
+      <div class="grid3" style="margin-bottom:24px">
+        <div class="cell" style="border-left:3px solid var(--gold)">
+          <div class="cell-label">Budha-Aditya Yoga — Her Strategic Instrument</div>
+          <div class="cell-sub">Mercury + Sun in Uttara Ashadha: her strategy is intelligent, final, and invincible-feeling when it comes from genuine clarity. She does not brainstorm loosely — she sees through things. The risk is the Force shadow: strategy presented with such certainty that course-correction feels like defeat. The gift: when she says something won't work, she has usually already run it three steps forward. Trust that.</div>
+        </div>
+        <div class="cell" style="border-left:3px solid rgba(74,123,94,0.8)">
+          <div class="cell-label">Jupiter Vargottama Libra — The Harmonious Strategist</div>
+          <div class="cell-sub">She builds strategy that is also beautiful — not aesthetically, but structurally. She is drawn to solutions that honor all parties, that create win-loops rather than win-lose trade-offs, that feel right rather than just technically optimal. This is the Libra quality of her Jupiter Vargottama: dharmic harmony as a strategic principle. What she designs tends to last because it was built fairly.</div>
+        </div>
+        <div class="cell" style="border-left:3px solid rgba(186,117,23,0.5)">
+          <div class="cell-label">Profile 5 — Universal Marketing Voice</div>
+          <div class="cell-sub">Line 5 carries universal resonance. What Helena articulates about Sisterhood OS has a reach quality — it speaks to something beyond a specific demographic or geography. Her marketing instinct is calibrated for width, not just depth. The risk: the projection field means people will over-read into what she says. Precision in language is essential for a 5th-line marketer — what she leaves ambiguous will be filled in by others' projections, not always accurately.</div>
+        </div>
+      </div>
+
+      <div class="divider"></div>
+      <div class="sec-title">What She Needs From Partnership With Sophia</div>
+      <div class="grid2" style="margin-bottom:0">
+        <div class="cell" style="border-left:3px solid var(--gold)">
+          <div class="cell-label">What she brings</div>
+          <div class="cell-sub">Strategic clarity with aesthetic intelligence. The capacity to see through a plan before executing it. Harmonious-by-default communication (Jupiter Libra). The energy to sustain long-game commitments (Uttara Ashadha, Gate 38, Saturn discipline inheritance). Universal appeal in what she articulates (Line 5). The emotional depth to hold complexity without panic (Gate 55 Freedom).</div>
+        </div>
+        <div class="cell" style="border-left:3px solid rgba(74,123,94,0.8)">
+          <div class="cell-label">What she needs from Sophia</div>
+          <div class="cell-sub">Genuine invitation for her strategic view — not just implementation tasks. The recognition that her intelligence is part of the offer, not just a supporting resource. Room to ride her emotional wave without being pressed for decisions before the wave completes. Clear confirmation when her projection field is being activated (when she is being seen as the solution without her full self being present in the room).</div>
+        </div>
+        <div class="cell" style="border-left:3px solid rgba(186,117,23,0.5)">
+          <div class="cell-label">How to work with her best</div>
+          <div class="cell-sub">Bring problems, not just tasks. Give her the full context and trust her to find the strategy within it. Don't ask for a quick answer on major decisions — give her time to ride the emotional wave. When she pushes back strongly, there is almost always a pattern she has seen that others have missed (Uttara Ashadha's far-sighted invincibility). Ask what she is seeing, not just what she is rejecting.</div>
+        </div>
+        <div class="cell" style="border-left:3px solid rgba(139,107,139,0.5)">
+          <div class="cell-label">Phase 1 (now, ages 20-30) vs Phase 2 (30-50)</div>
+          <div class="cell-sub">She is in Phase 1 of the 6-line arc: trial, error, learning, making mistakes that will become the teaching. Some of what she builds now will not survive the decade. That is the design. The Role Model (Phase 3) is built from the failures of Phase 1 and the integration of Phase 2. Sophia's role: not to shield Helena from Phase 1 learning, but to ensure she has a container safe enough to learn in.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-hd">
+        <div class="card-icon">★</div>
+        <div>
+          <div class="card-title">The Long Arc — What She Is Building Toward</div>
+          <div class="card-sub">Profile 3/6 · Saturn Return ~2035 · Mercury Mahadasha 2018–2035 · Ketu MD 2035–2042</div>
+        </div>
+      </div>
+      <div class="highlight" style="border-color:rgba(74,123,94,0.35);background:rgba(74,123,94,0.04)">
+        <div class="highlight-headline" style="color:rgba(74,123,94,0.9);font-size:20px">The Role Model is not a destination. It is a direction.</div>
+        <div class="highlight-body">Mercury Mahadasha (Dec 2018 – Dec 2035) is where intelligence becomes her vehicle for everything. It began at age 12 and ends at age 29 — meaning the entire sweep of her teens and twenties is Mercury terrain. Around her Saturn Return (approximately 2035, age 29-30), Mercury MD closes AND Profile Phase 1 ends simultaneously. Ketu Mahadasha opens (Dec 2035 – Dec 2042): the period of release, spiritual depth, and distillation of everything Mercury built. In Phase 2 of the 3/6 profile she steps back from the active trial-and-error of Phase 1, integrating what was lived, watching from a higher vantage. Venus Mahadasha then opens at age 36 (Dec 2042): creativity, beauty, relationships, abundance — the 20-year harvest of everything she has built. The combination of Mercury MD intelligence arc + 3/6 Living Contrast profile means the work she is doing now, at 20, is the raw material of a person who, at 35–40, will be one of the most grounded and genuinely embodied examples of sovereign intelligence that Sisterhood OS has produced.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DASHA TIMELINE -->
+  <div id="timeline" class="section">
+    <div class="card">
+      <div class="card-hd">
+        <div class="card-icon">→</div>
+        <div>
+          <div class="card-title">Dasha Timeline</div>
+          <div class="card-sub">2006–2050 · Full Vimshottari arc · Birth time confirmed 21:20 UTC · Moon in Anuradha (Saturn-ruled)</div>
+        </div>
+      </div>
+
+      <div class="body-text" style="margin-bottom:6px">All dates confirmed from Moon in Anuradha nakshatra at 7°34' Scorpio sidereal (birth time 21:20 local, January 24, 2006): 31.8% through Anuradha = 12.96 years Saturn MD remaining at birth. Saturn MD closed December 2018. Mercury MD December 2018 – December 2035. Currently Mercury/Moon antardasha (January 2026 – June 2027).</div>
+
+      <div class="sec-title">Mahadasha Periods</div>
+      <div style="margin-bottom:28px">
+        <div class="dasha-bar saturn" style="background:rgba(123,90,62,0.07);border:1px solid rgba(123,90,62,0.2);padding:14px 20px;border-radius:10px;display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+          <div>
+            <div class="dasha-lbl" style="font-size:13px;font-weight:600;color:var(--charcoal);margin-bottom:4px;">Saturn Mahadasha (partial — from birth)</div>
+            <div class="dasha-theme" style="font-size:12px;color:var(--text-muted);">The formation years (ages 0–12). Discipline, structure, the long way, patience without proof. Saturn in Pushya (own nakshatra, 12th house from Leo ASC) — the nourishing discipline that builds from the hidden realm. She was being forged, not broken.</div>
+          </div>
+          <div class="dasha-period" style="font-size:12px;color:var(--text-secondary);white-space:nowrap;margin-left:16px;">Birth (Jan 2006) – December 2018</div>
+        </div>
+        <div class="dasha-bar mercury-main" style="padding:14px 20px;border-radius:10px;display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+          <div>
+            <div class="dasha-lbl" style="font-size:13px;font-weight:600;color:var(--charcoal);margin-bottom:4px;">Mercury Mahadasha <span class="now-dot">◼ 7 years in</span></div>
+            <div class="dasha-theme" style="font-size:12px;color:var(--text-muted);">Intelligence as identity. Budha-Aditya Yoga in full expression. Opened at age 12. Runs through age 29 — the entire sweep of her teens and twenties is Mercury terrain.</div>
+          </div>
+          <div class="dasha-period" style="font-size:12px;color:var(--text-secondary);white-space:nowrap;margin-left:16px;">December 2018 – December 2035</div>
+        </div>
+        <div class="dasha-bar" style="background:rgba(123,90,62,0.04);border:1px dashed rgba(123,90,62,0.2);padding:10px 20px;border-radius:10px;display:flex;justify-content:space-between;align-items:center;margin-bottom:4px;margin-left:24px;opacity:0.7;">
+          <div><div class="dasha-lbl" style="font-size:12px;color:var(--text-muted);">Mercury/Mercury — completed</div><div class="dasha-theme" style="font-size:11px;color:var(--text-muted);">Pure intelligence opening. Ages 12–15. Foundation of the entire Mercury era.</div></div>
+          <div class="dasha-period" style="font-size:11px;color:var(--text-muted);white-space:nowrap;margin-left:16px;">Dec 2018 – May 2021</div>
+        </div>
+        <div class="dasha-bar" style="background:rgba(123,90,62,0.04);border:1px dashed rgba(123,90,62,0.2);padding:10px 20px;border-radius:10px;display:flex;justify-content:space-between;align-items:center;margin-bottom:4px;margin-left:24px;opacity:0.7;">
+          <div><div class="dasha-lbl" style="font-size:12px;color:var(--text-muted);">Mercury/Ketu — completed</div><div class="dasha-theme" style="font-size:11px;color:var(--text-muted);">Spiritual deepening, intuition, Ketu in 2H (Hasta precision). Ages 15–16.</div></div>
+          <div class="dasha-period" style="font-size:11px;color:var(--text-muted);white-space:nowrap;margin-left:16px;">May 2021 – May 2022</div>
+        </div>
+        <div class="dasha-bar" style="background:rgba(123,90,62,0.04);border:1px dashed rgba(123,90,62,0.2);padding:10px 20px;border-radius:10px;display:flex;justify-content:space-between;align-items:center;margin-bottom:4px;margin-left:24px;opacity:0.7;">
+          <div><div class="dasha-lbl" style="font-size:12px;color:var(--text-muted);">Mercury/Venus — completed</div><div class="dasha-theme" style="font-size:11px;color:var(--text-muted);">Creative bloom and relational depth. Venus in 5H (own nakshatra). Ages 16–19.</div></div>
+          <div class="dasha-period" style="font-size:11px;color:var(--text-muted);white-space:nowrap;margin-left:16px;">May 2022 – March 2025</div>
+        </div>
+        <div class="dasha-bar" style="background:rgba(123,90,62,0.04);border:1px dashed rgba(123,90,62,0.2);padding:10px 20px;border-radius:10px;display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;margin-left:24px;opacity:0.7;">
+          <div><div class="dasha-lbl" style="font-size:12px;color:var(--text-muted);">Mercury/Sun — completed</div><div class="dasha-theme" style="font-size:11px;color:var(--text-muted);">Budha-Aditya peak. Authority and recognition. Lagna lord Sun activated. Ages 19–20.</div></div>
+          <div class="dasha-period" style="font-size:11px;color:var(--text-muted);white-space:nowrap;margin-left:16px;">March 2025 – January 2026</div>
+        </div>
+        <div class="dasha-bar antardasha" style="padding:14px 20px;border-radius:10px;display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;margin-left:24px;">
+          <div>
+            <div class="dasha-lbl" style="font-size:13px;font-weight:600;color:var(--gold);margin-bottom:4px;">Mercury/Moon Antardasha <span style="font-size:11px;margin-left:8px;">Active now</span></div>
+            <div class="dasha-theme" style="font-size:12px;color:var(--text-muted);">Moon in 4H (Scorpio/Anuradha). Intelligence meets emotional depth. The strategy meets the feeling. Home, roots, and inner knowing activated within the Mercury arc. Age 20–21.</div>
+          </div>
+          <div class="dasha-period" style="font-size:12px;color:var(--text-secondary);white-space:nowrap;margin-left:16px;">January 2026 – June 2027</div>
+        </div>
+        <div class="dasha-bar" style="background:rgba(186,117,23,0.05);border:1px solid rgba(186,117,23,0.2);padding:14px 20px;border-radius:10px;display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;margin-left:24px;">
+          <div>
+            <div class="dasha-lbl" style="font-size:13px;font-weight:600;color:var(--charcoal);margin-bottom:4px;">Mercury/Mars Antardasha</div>
+            <div class="dasha-theme" style="font-size:12px;color:var(--text-muted);">Mars in 9H (Aries/Bharani). The dharmic warrior. Intelligence into bold direct action. Mars rules 4H and 9H from Leo ASC — home and dharma activated simultaneously. Age 21–22.</div>
+          </div>
+          <div class="dasha-period" style="font-size:12px;color:var(--text-secondary);white-space:nowrap;margin-left:16px;">June 2027 – June 2028</div>
+        </div>
+        <div class="dasha-bar" style="background:rgba(139,107,139,0.05);border:1px solid rgba(139,107,139,0.15);padding:14px 20px;border-radius:10px;display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;margin-left:24px;">
+          <div>
+            <div class="dasha-lbl" style="font-size:13px;font-weight:600;color:var(--charcoal);margin-bottom:4px;">Mercury/Rahu Antardasha</div>
+            <div class="dasha-theme" style="font-size:12px;color:var(--text-muted);">Rahu in 8H (Pisces/Uttara Bhadrapada). The most expansive chapter — intelligence at its furthest reach. Transformation, hidden power, depth research. Jupiter Return ~2030. Ages 22–25.</div>
+          </div>
+          <div class="dasha-period" style="font-size:12px;color:var(--text-secondary);white-space:nowrap;margin-left:16px;">June 2028 – January 2031</div>
+        </div>
+        <div class="dasha-bar" style="background:rgba(74,123,94,0.06);border:1px solid rgba(74,123,94,0.2);padding:14px 20px;border-radius:10px;display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;margin-left:24px;">
+          <div>
+            <div class="dasha-lbl" style="font-size:13px;font-weight:600;color:rgba(74,123,94,0.9);margin-bottom:4px;">Mercury/Jupiter Antardasha</div>
+            <div class="dasha-theme" style="font-size:12px;color:var(--text-muted);">Jupiter Vargottama — the peak planet — as antardasha lord. Intelligence and wisdom in full synthesis. Teaching, building a body of work. The dharmic fruition. Ages 25–27.</div>
+          </div>
+          <div class="dasha-period" style="font-size:12px;color:var(--text-secondary);white-space:nowrap;margin-left:16px;">January 2031 – May 2033</div>
+        </div>
+        <div class="dasha-bar" style="background:rgba(186,117,23,0.08);border:1px solid rgba(186,117,23,0.25);padding:14px 20px;border-radius:10px;display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;margin-left:24px;">
+          <div>
+            <div class="dasha-lbl" style="font-size:13px;font-weight:600;color:var(--gold);margin-bottom:4px;">Mercury/Saturn Antardasha</div>
+            <div class="dasha-theme" style="font-size:12px;color:var(--text-muted);">Saturn in 12H (Cancer/Pushya, own nakshatra). The masterwork. Discipline at its deepest. What she builds here is what Ketu MD will distill. Saturn Return arrives in this window. Ages 27–29.</div>
+          </div>
+          <div class="dasha-period" style="font-size:12px;color:var(--text-secondary);white-space:nowrap;margin-left:16px;">May 2033 – December 2035</div>
+        </div>
+        <div class="dasha-bar future" style="background:rgba(74,123,94,0.05);border:1px solid rgba(74,123,94,0.18);padding:14px 20px;border-radius:10px;display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+          <div>
+            <div class="dasha-lbl" style="font-size:13px;font-weight:600;color:var(--charcoal);margin-bottom:4px;">Ketu Mahadasha</div>
+            <div class="dasha-theme" style="font-size:12px;color:var(--text-muted);">Spiritual completion and distillation. Age 29. Ketu in 2H (Hasta, precision): wisdom transmitted through speech and accumulated craft. The inner researcher harvesting what Mercury built.</div>
+          </div>
+          <div class="dasha-period" style="font-size:12px;color:var(--text-secondary);white-space:nowrap;margin-left:16px;">December 2035 – December 2042</div>
+        </div>
+        <div class="dasha-bar future" style="background:rgba(186,117,23,0.04);border:1px solid rgba(186,117,23,0.12);padding:14px 20px;border-radius:10px;display:flex;justify-content:space-between;align-items:center;">
+          <div>
+            <div class="dasha-lbl" style="font-size:13px;font-weight:600;color:var(--charcoal);margin-bottom:4px;">Venus Mahadasha</div>
+            <div class="dasha-theme" style="font-size:12px;color:var(--text-muted);">Venus in 5H (Purva Ashadha, own nakshatra). Venus rules 3H and 10H from Leo ASC: the dharmic career culminates. Age 36. Beauty, abundance, creative sovereignty — the 20-year harvest of everything Mercury built.</div>
+          </div>
+          <div class="dasha-period" style="font-size:12px;color:var(--text-secondary);white-space:nowrap;margin-left:16px;">December 2042 – December 2062</div>
+        </div>
+      </div>
+
+      <div class="divider"></div>
+      <div class="sec-title">Visual Arc: 2006 – 2050</div>
+      <div class="tl-wrap">
+        <div class="tl-track">
+          <div class="tl-fill-past"></div>
+          <div class="tl-fill-now"></div>
+          <div class="tl-fill-future"></div>
+          <div class="tl-marker" style="left:2.4%">
+            <div class="tl-top"><div class="tl-year">2007</div><div class="tl-lbl">Saturn begins</div></div>
+            <div class="tl-dot"></div>
+          </div>
+          <div class="tl-marker" style="left:3.5%">
+            <div class="tl-top"><div class="tl-year gold">May 2026</div><div class="tl-lbl gold">◼ Now</div></div>
+            <div class="tl-dot now"></div>
+            <div class="tl-bot"><div class="tl-lbl gold">Mercury begins</div></div>
+          </div>
+          <div class="tl-marker" style="left:45%">
+            <div class="tl-dot" style="border-color:var(--text-muted)"></div>
+            <div class="tl-bot"><div class="tl-year">2043</div><div class="tl-lbl">Mercury ends</div></div>
+          </div>
+          <div class="tl-marker" style="left:62%">
+            <div class="tl-top"><div class="tl-year">2050</div><div class="tl-lbl">Ketu ends</div></div>
+            <div class="tl-dot jup"></div>
+          </div>
+          <div class="tl-marker" style="left:100%">
+            <div class="tl-top"><div class="tl-year">2070</div><div class="tl-lbl">Venus ends</div></div>
+            <div class="tl-dot jup"></div>
+          </div>
+        </div>
+        <div style="display:flex;margin-top:56px;font-family:'Cormorant Garamond',serif;">
+          <div style="width:3.5%;text-align:center;">
+            <div style="font-size:13px;color:var(--text-muted)">Saturn</div>
+            <div style="font-size:10px;color:var(--text-muted)">(19y)</div>
+          </div>
+          <div style="width:41.5%;text-align:center;">
+            <div style="font-size:16px;color:var(--gold)">Mercury Mahadasha</div>
+            <div style="font-size:11px;color:var(--text-muted)">Intelligence as vehicle · Budha-Aditya Yoga expressed (17 yrs)</div>
+          </div>
+          <div style="width:17%;text-align:center;">
+            <div style="font-size:14px;color:rgba(74,123,94,0.9)">Ketu</div>
+            <div style="font-size:10px;color:var(--text-muted)">(7y)</div>
+          </div>
+          <div style="width:38%;text-align:center;">
+            <div style="font-size:14px;color:var(--gold)">Venus Mahadasha</div>
+            <div style="font-size:11px;color:var(--text-muted)">Creative sovereignty (20y)</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="divider"></div>
+      <div class="sec-title">Mercury Mahadasha — Full Antardasha Sequence</div>
+      <div class="grid2" style="margin-bottom:0">
+        <div class="cell" style="border:1px solid rgba(139,107,139,0.2);background:rgba(139,107,139,0.02)"><div class="cell-label" style="color:var(--text-muted)">Mercury/Mercury · December 2018 – May 2021 · COMPLETED</div><div class="cell-sub">The opening at age 12. Budha-Aditya Yoga activates for the first time. The defining intellectual interests of the full 17-year Mahadasha take root here: in school years, in early curiosity, in the first articulation of what this mind is for.</div></div>
+        <div class="cell" style="border:1px solid rgba(139,107,139,0.2);background:rgba(139,107,139,0.02)"><div class="cell-label" style="color:var(--text-muted)">Mercury/Ketu · May 2021 – May 2022 · COMPLETED</div><div class="cell-sub">Ketu in Hasta (2nd house): past-life mastery of speech and inner resources. A stripping-back year at age 15-16. Solitary deepening, inner research, the kind of knowing that does not need an audience.</div></div>
+        <div class="cell" style="border:1px solid rgba(139,107,139,0.2);background:rgba(139,107,139,0.02)"><div class="cell-label" style="color:var(--text-muted)">Mercury/Venus · May 2022 – March 2025 · COMPLETED</div><div class="cell-sub">Venus in 5th house (Purva Ashadha). Creative intelligence meets beauty and collaboration. Age 16-19. The most artistically abundant chapter of the early Mahadasha. Relational, expressive, beautiful.</div></div>
+        <div class="cell" style="border:1px solid rgba(139,107,139,0.2);background:rgba(139,107,139,0.02)"><div class="cell-label" style="color:var(--text-muted)">Mercury/Sun · March 2025 – January 2026 · COMPLETED</div><div class="cell-sub">The Budha-Aditya Yoga antardasha. Mercury and Sun at full simultaneous activation. Ten months of identity and intelligence as a unified field. Just closed. Age 19-20.</div></div>
+        <div class="cell" style="border:1.5px solid var(--gold);background:rgba(186,117,23,0.04)"><div class="cell-label" style="color:var(--gold)">Mercury/Moon · January 2026 – June 2027 · NOW</div><div class="cell-sub">Anuradha Moon in 4th house (Scorpio). The emotional layer of the intelligence opens. Depth of connection, inner knowing, mass resonance. The mind learns to feel. Current antardasha — active now through age 21.</div></div>
+        <div class="cell"><div class="cell-label">Mercury/Mars · June 2027 – June 2028</div><div class="cell-sub">Mars in 9th house (Bharani, Venus-ruled). Dharmic courage, bold articulation. Nine years of Mercury intelligence meets the will to take up real space with it. Age 21-22.</div></div>
+        <div class="cell"><div class="cell-label">Mercury/Rahu · June 2028 – January 2031</div><div class="cell-sub">Rahu in 8th house (Pisces). Rapid expansion into depth. Transformation, larger platforms, the boundary between self and collective begins dissolving. Age 22-24. The 5-line reach goes wider.</div></div>
+        <div class="cell" style="border:1px solid rgba(186,117,23,0.35);background:rgba(186,117,23,0.03)"><div class="cell-label" style="color:var(--gold)">Mercury/Jupiter · January 2031 – May 2033</div><div class="cell-sub">Jupiter Vargottama in 3rd house. The most powerful planet activated at antardasha level within Mercury Mahadasha. Jupiter Return ~2030 flows directly into this period. Wisdom, dharmic teaching, writing, and beautiful collaborative work converge. Age 25-27.</div></div>
+        <div class="cell"><div class="cell-label">Mercury/Saturn · May 2033 – December 2035</div><div class="cell-sub">Saturn in 12th house. Consolidation, solitude, spiritual deepening. The full discipline of the 17-year arc arrives at mature form. Saturn Return (~2035) closes the Mahadasha at the threshold of a new cycle. Age 27-29.</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DECLARATIONS -->
+  <div id="declarations" class="section">
+    <div class="card">
+      <div class="card-hd">
+        <div class="card-icon">❖</div>
+        <div>
+          <div class="card-title">Sacred Declarations</div>
+          <div class="card-sub">The vows that anchor the design · Drawn from Uttara Ashadha, Gate 41, Profile 3/6, Budha-Aditya Yoga</div>
+        </div>
+      </div>
+
+      <div class="decl">
+        <div class="decl-quote">"The victory was always mine. I am walking home to claim it, not fighting for it."</div>
+        <div class="decl-line"></div>
+      </div>
+      <div class="decl">
+        <div class="decl-quote">"My intelligence is not a tool I use. It is what I am. I speak it without apology."</div>
+        <div class="decl-line"></div>
+      </div>
+      <div class="decl">
+        <div class="decl-quote">"I do not decide in the fire of the moment. I wait for the wave to complete."</div>
+        <div class="decl-line"></div>
+      </div>
+      <div class="decl">
+        <div class="decl-quote">"Freedom is not downstream of my circumstances. It lives inside me now."</div>
+        <div class="decl-line"></div>
+      </div>
+      <div class="decl">
+        <div class="decl-quote">"I stay. Not from stubbornness — from knowing."</div>
+        <div class="decl-line"></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-hd">
+        <div class="card-icon">✦</div>
+        <div>
+          <div class="card-title">Core Transmission</div>
+          <div class="card-sub">The soul of Helena's dharma</div>
+        </div>
+      </div>
+      <div style="font-family:'Cormorant Garamond',serif;font-size:26px;color:var(--charcoal);line-height:1.5;text-align:center;padding:20px 0">
+        She does not convince people<br>
+        with her intelligence.<br>
+        She shows them<br>
+        what intelligence <strong>is</strong>.
+      </div>
+    </div>
+
+    <div class="card" style="background:var(--charcoal);border-color:transparent">
+      <div style="font-family:'Cormorant Garamond',serif;font-size:20px;color:var(--gold-light);line-height:1.7;text-align:center">
+        Uttara Ashadha Sun — the nakshatra that does not retreat.<br>
+        Mercury conjunct Sun — the mind that is the person.<br>
+        Jupiter Vargottama — what flows most easily is also most dharmic.<br>
+        <span style="color:rgba(250,240,220,0.55);font-size:16px">She came in knowing. The work is allowing herself to be fully known.</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- CALENDAR 2026–2030 -->
+  <div id="calendar" class="section">
+    <div class="card">
+      <div class="card-hd">
+        <div class="card-icon">📅</div>
+        <div>
+          <div class="card-title">Astrological Calendar 2026–2030</div>
+          <div class="card-sub">Dasha transitions · Saturn transits · Jupiter cycle · Mercury Mahadasha arc · Age 20-24</div>
+        </div>
+      </div>
+      <div class="body-text">All Dasha dates computed from Anuradha Moon (birth time confirmed 21:20 local). Transit house references use Leo Ascendant (confirmed). Gold dots: prime action windows. Green dots: extraordinary peaks. Amber dots: energy shifts. Red dots: hold, do not initiate.</div>
+      <div class="grid4" style="margin-bottom:0">
+        <div class="cell" style="text-align:center"><div style="width:12px;height:12px;border-radius:50%;background:rgba(74,123,94,0.9);margin:0 auto 8px;box-shadow:0 0 0 3px rgba(74,123,94,0.2);"></div><div class="cell-label" style="text-align:center">Peak</div><div style="font-size:11px;color:var(--text-secondary)">Extraordinary window</div></div>
+        <div class="cell" style="text-align:center"><div style="width:12px;height:12px;border-radius:50%;background:var(--gold);margin:0 auto 8px;"></div><div class="cell-label" style="text-align:center">Auspicious</div><div style="font-size:11px;color:var(--text-secondary)">Prime action window</div></div>
+        <div class="cell" style="text-align:center"><div style="width:12px;height:12px;border-radius:50%;background:rgba(186,117,23,0.4);margin:0 auto 8px;"></div><div class="cell-label" style="text-align:center">Transit</div><div style="font-size:11px;color:var(--text-secondary)">Energy shift</div></div>
+        <div class="cell" style="text-align:center"><div style="width:12px;height:12px;border-radius:50%;background:#b53030;margin:0 auto 8px;"></div><div class="cell-label" style="text-align:center">Hold</div><div style="font-size:11px;color:var(--text-secondary)">Review, don't initiate</div></div>
+      </div>
+    </div>
+
+    <!-- 2026 -->
+    <div class="cal-year">
+      <div class="cal-year-hd">
+        <div class="cal-year-num">2026</div>
+        <div>
+          <div class="cal-year-badge badge-green">Mercury/Moon Antardasha Opens · 20th Birthday</div>
+          <div class="cal-year-theme">She enters 2026 already 7 years into Mercury Mahadasha — the intelligence arc has been running since age 12. The defining shift of 2026 is Mercury/Moon antardasha (January 2026 – June 2027): Moon in the 4th house (Scorpio/Anuradha) brings the intelligence inward. After the high-recognition arc of Mercury/Sun (the Lagna lord's own antardasha, March–January 2026), the emotional chapter opens. Saturn continues transiting Aries sidereal (her 9th house from Leo ASC: dharma, higher education, long journeys, the father principle) — discipline applied to the areas of philosophy and dharmic expansion.</div>
+        </div>
+      </div>
+      <ul class="cal-events">
+        <li class="cal-event">
+          <div class="ev-date">January 8</div>
+          <div class="ev-dot peak"></div>
+          <div class="ev-content">
+            <div class="ev-title">Mercury/Moon Antardasha Opens <span class="ev-tag peak">Antardasha Shift</span></div>
+            <div class="ev-body">Mercury/Sun closes (the recognition peak, the Budha-Aditya Yoga's most concentrated moment). Mercury/Moon opens: Moon in 4H (Scorpio/Anuradha). The intelligence — which has been rapidly building output since age 12 — now turns toward its roots. 4th house themes: home, emotional foundation, mother, inner world, private knowing. Anuradha: devotion, genuine friendship, the willingness to stay through difficulty. This antardasha asks what the intelligence is actually anchored to.</div>
+          </div>
+        </li>
+        <li class="cal-event">
+          <div class="ev-date">January 24</div>
+          <div class="ev-dot peak"></div>
+          <div class="ev-content">
+            <div class="ev-title">BIRTHDAY: 20 Years Old · 7 Years into Mercury Mahadasha <span class="ev-tag peak">Threshold</span></div>
+            <div class="ev-body">Her 20th birthday. By this point she has already completed four full antardashas within Mercury MD: the pure opening (Merc/Merc), the spiritual deepening (Merc/Ketu), the creative bloom (Merc/Venus), and the authority peak (Merc/Sun). The person she is at 20 was built across 7 years of this intelligence era — not just Saturn's childhood. Mark this birthday as the opening of Mercury/Moon: the chapter where what she has built must connect to what she actually feels.</div>
+          </div>
+        </li>
+        <li class="cal-event">
+          <div class="ev-date">Throughout 2026</div>
+          <div class="ev-dot auspicious"></div>
+          <div class="ev-content">
+            <div class="ev-title">Mercury/Moon: Intelligence Meeting Emotional Depth <span class="ev-tag power">Active</span></div>
+            <div class="ev-body">The 4th house is the house of the private self — what she keeps beneath the Leo ASC's radiant presentation. Moon in Scorpio/Anuradha means the emotional foundation is deep, intense, and devoted. Mercury/Moon is the period where the strategic mind learns to trust the body's knowing. For Generator with Emotional Authority: this antardasha asks her to slow the Mercury speed down enough to actually feel the wave. The intelligence that acts before the emotional clarity arrives will create reversals. The intelligence that waits for genuine feeling creates architecture.</div>
+          </div>
+        </li>
+        <li class="cal-event">
+          <div class="ev-date">2026</div>
+          <div class="ev-dot transit"></div>
+          <div class="ev-content">
+            <div class="ev-title">Saturn in Aries (9th House from Leo ASC): Dharmic Discipline <span class="ev-tag power">Transit</span></div>
+            <div class="ev-body">Saturn transiting Aries sidereal = 9th house from Leo Ascendant (dharma, higher education, long journeys, philosophy, father). Saturn in the 9th: discipline applied to the larger questions — what she believes, what she is learning at depth, what her relationship with a guiding framework is. This can bring seriousness or obstacles in areas of philosophy, travel, or formal education. It also builds dharmic integrity — what she commits to at the 9th house level is what Mercury/Moon's 4H depth is anchored to.</div>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <!-- 2027 -->
+    <div class="cal-year">
+      <div class="cal-year-hd">
+        <div class="cal-year-num">2027</div>
+        <div>
+          <div class="cal-year-badge badge-gold">Mercury/Moon Closes June · Mercury/Mars Opens</div>
+          <div class="cal-year-theme">Two antardasha periods in 2027. Mercury/Moon runs through June 9: the emotional depth chapter within Mercury MD continues — roots, inner knowing, 4th house. Then Mercury/Mars opens (June 2027 – June 2028): Mars in the 9th house (Aries/Bharani). The warrior dharmic energy enters the intelligence arc. Age 21. After the inward emotional chapter, the work moves outward with boldness and directed force. Saturn exits Aries sidereal (9H from Leo ASC) and enters Taurus (10H from Leo ASC) approximately mid-2027 — career and public reputation get Saturn's disciplined attention.</div>
+        </div>
+      </div>
+      <ul class="cal-events">
+        <li class="cal-event">
+          <div class="ev-date">January–June 2027</div>
+          <div class="ev-dot auspicious"></div>
+          <div class="ev-content">
+            <div class="ev-title">Mercury/Moon Final Chapter: What the Feeling Teaches <span class="ev-tag power">Active</span></div>
+            <div class="ev-body">The closing months of Mercury/Moon antardasha. Moon in 4H (Scorpio/Anuradha): whatever was felt and revealed in 2026 is now integrating into knowing. Anuradha's gift is perseverance through emotional difficulty — not resilience as armor but as genuine staying power. Gate 34 (Power): the Sacral knows what was genuinely engaged vs. what was performed. This is the period to complete the emotional audit before the Mars period opens the action chapter.</div>
+          </div>
+        </li>
+        <li class="cal-event">
+          <div class="ev-date">June 9</div>
+          <div class="ev-dot peak"></div>
+          <div class="ev-content">
+            <div class="ev-title">Mercury/Mars Opens: From Depth to Action <span class="ev-tag peak">Antardasha Shift</span></div>
+            <div class="ev-body">Mercury/Moon closes. Mercury/Mars begins. Mars in the 9th house (Aries/Bharani): the dharmic warrior energy activates within the intelligence arc. Mars rules the 4H (home, emotional foundation — just integrated in Moon period) and the 9H (dharma, expansion, long journeys). Mercury/Mars is the period where what was felt in the Moon chapter becomes an act of courage. The intelligence now has directionality and forward energy. Bharani nakshatra (Venus-ruled, carrying capacity, birth and death themes): the new form she moves toward has genuine weight and consequence.</div>
+          </div>
+        </li>
+        <li class="cal-event">
+          <div class="ev-date">Mid-2027</div>
+          <div class="ev-dot transit"></div>
+          <div class="ev-content">
+            <div class="ev-title">Saturn Enters Taurus (10th House from Leo ASC): Career Discipline <span class="ev-tag power">Transit Shift</span></div>
+            <div class="ev-body">Saturn moves from Aries (9H: dharmic discipline) to Taurus (10H from Leo ASC: career, public reputation, professional authority). Saturn in the 10th: significant — her career and public work receive Saturn's scrutiny and structure. This is the period where professional credibility is built through demonstrable effort, not perception. Combined with Mercury/Mars (bold dharmic action): what she does publicly in the second half of 2027 is being evaluated against real standards. This is not a time for shortcuts. It is a time for the kind of professional investment that becomes undeniable.</div>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <!-- 2028 -->
+    <div class="cal-year">
+      <div class="cal-year-hd">
+        <div class="cal-year-num">2028</div>
+        <div>
+          <div class="cal-year-badge badge-gold">Mercury/Mars Closes June · Mercury/Rahu Opens</div>
+          <div class="cal-year-theme">Two antardasha periods in 2028. Mercury/Mars closes June 6 — the dharmic warrior chapter (action, courage, 9H expansion) completes. Mercury/Rahu opens (June 2028 – January 2031): Rahu in the 8th house (Pisces/Uttara Bhadrapada). The most ambitious and expansive chapter of the Mercury Mahadasha begins. Age 22. Rahu amplifies Mercury's reach into territories beyond the familiar — transformation, hidden knowledge, occult depth, the power behind the visible surface. This is the chapter where the intelligence goes where it hasn't gone before.</div>
+        </div>
+      </div>
+      <ul class="cal-events">
+        <li class="cal-event">
+          <div class="ev-date">January–June 2028</div>
+          <div class="ev-dot auspicious"></div>
+          <div class="ev-content">
+            <div class="ev-title">Mercury/Mars Closes: The Warrior Chapter Completes <span class="ev-tag power">Active</span></div>
+            <div class="ev-body">The final months of Mercury/Mars. Mars in 9H (Aries/Bharani) — what she committed to courageous in 2027 is now showing its results. Profile 3/6 Phase 1: she has been testing, trying, and accumulating real experience through bold initiative. What worked and what didn't in the Mars period is the data. Gene Key 18 (Integrity): did the thing she fought for prove worth the commitment? That discernment now belongs to her. Consolidate the Mars harvest before Rahu's expansion begins.</div>
+          </div>
+        </li>
+        <li class="cal-event">
+          <div class="ev-date">June 6</div>
+          <div class="ev-dot peak"></div>
+          <div class="ev-content">
+            <div class="ev-title">Mercury/Rahu Opens: Intelligence at Its Furthest Reach <span class="ev-tag peak">Antardasha Shift</span></div>
+            <div class="ev-body">Rahu in the 8th house (Pisces/Uttara Bhadrapada). Rahu amplifies the desires and drives of the house it occupies — in the 8H: transformation, research into hidden systems, depth psychology, inheritance, the power beneath the visible surface. Uttara Bhadrapada (Saturn-ruled, cosmic serpent) adds the quality of accessing profound wisdom through sustained depth rather than surface exploration. Mercury/Rahu: the intelligence now has ambition that reaches beyond its current world. This antardasha is typically the most outwardly expansive within any Mercury Mahadasha. What she builds in this 2.5-year window will seem impossible by her current standards.</div>
+          </div>
+        </li>
+        <li class="cal-event">
+          <div class="ev-date">2028 onward</div>
+          <div class="ev-dot auspicious"></div>
+          <div class="ev-content">
+            <div class="ev-title">Rahu's Gift and Shadow During Mercury/Rahu <span class="ev-tag power">Guidance</span></div>
+            <div class="ev-body">Rahu in 8H: the gift is access to power and knowledge that operates beneath the ordinary surface. The shadow: the Budha-Aditya intelligence becomes hypnotic — she can convince herself of almost anything when Rahu amplifies the mind's reach. The Emotional Authority protocol becomes most critical during Mercury/Rahu: the mind will want to move faster than the wave can confirm. Rahu in Uttara Bhadrapada (cosmic depth, rain, profound wisdom accessed through darkness) — the best thing she can commit to studying during this antardasha is what lies beneath, not what shines above.</div>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <!-- 2029 -->
+    <div class="cal-year">
+      <div class="cal-year-hd">
+        <div class="cal-year-num">2029</div>
+        <div>
+          <div class="cal-year-badge badge-gold">Mercury/Rahu — The Expansion Year</div>
+          <div class="cal-year-theme">Full year of Mercury/Rahu antardasha (June 2028 – January 2031). Age 23. Rahu in the 8H amplifies Mercury's ambition into territories of genuine depth and transformation. This is the antardasha of the most significant intellectual and professional expansion of her Mercury era — the horizons move outward and she moves with them. Saturn in Taurus sidereal (10H from Leo ASC) continues building career credibility through disciplined, demonstrated effort. The combination: ambitious expansion (Mercury/Rahu) + professional structure (Saturn in 10H) creates extraordinary conditions for building something that is both bold and real.</div>
+        </div>
+      </div>
+      <ul class="cal-events">
+        <li class="cal-event">
+          <div class="ev-date">Throughout 2029</div>
+          <div class="ev-dot auspicious"></div>
+          <div class="ev-content">
+            <div class="ev-title">Mercury/Rahu: The Intelligence Reaches Its Furthest Horizon <span class="ev-tag power">Active</span></div>
+            <div class="ev-body">Rahu in Uttara Bhadrapada (the 8H of Pisces): the cosmic serpent pulling her intelligence into depth. This antardasha creates ambition that feels almost too large — and that is Rahu's invitation, not a warning sign. The Budha-Aditya Yoga (Mercury conjunct Sun) under Rahu's amplification can produce extraordinary creative and intellectual output. Gate 34 (Power): the Sacral knows when the direction is genuinely hers vs. when Rahu is generating appetites that belong to its hunger rather than her truth. The practice: verify the Sacral yes before following any particularly intoxicating idea.</div>
+          </div>
+        </li>
+        <li class="cal-event">
+          <div class="ev-date">2029</div>
+          <div class="ev-dot transit"></div>
+          <div class="ev-content">
+            <div class="ev-title">Saturn in Taurus (10th House from Leo ASC): Career Credibility Building <span class="ev-tag power">Transit</span></div>
+            <div class="ev-body">Saturn continues through Taurus sidereal = 10th house from Leo Ascendant (career, professional reputation, public authority). This is one of the most significant Saturn transits for career: Saturn in the 10H demands real performance, genuine demonstrated work, and the willingness to be evaluated by external standards. Combined with Mercury/Rahu's expansive energy: the expansion is visible and being assessed. The work she puts into building professional credibility now creates foundations that last a decade.</div>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <!-- 2030 -->
+    <div class="cal-year">
+      <div class="cal-year-hd">
+        <div class="cal-year-num">2030</div>
+        <div>
+          <div class="cal-year-badge badge-green">Mercury/Rahu Continues · Jupiter Return</div>
+          <div class="cal-year-theme">Full year in Mercury/Rahu antardasha. Age 24. Jupiter completing its second 12-year cycle and returning to sidereal Libra (natal Jupiter position, Vargottama) — approximately 2030 is the Jupiter Return. The first Jupiter Return (2018) coincided with the opening of Mercury Mahadasha at age 12. This second Return arrives mid-Mercury/Rahu: Jupiter's Vargottama dharmic expansion amplifies into the already-expansive Rahu territory. An extraordinary convergence — the boldest chapter of Mercury MD is also the moment of dharmic reset. The Vishakha Jupiter (dual paths converging at the triumphant archway) speaks to what she is building on two fronts simultaneously.</div>
+        </div>
+      </div>
+      <ul class="cal-events">
+        <li class="cal-event">
+          <div class="ev-date">Throughout 2030</div>
+          <div class="ev-dot auspicious"></div>
+          <div class="ev-content">
+            <div class="ev-title">Mercury/Rahu: The Ambition at Its Peak <span class="ev-tag power">Active</span></div>
+            <div class="ev-body">Mercury/Rahu antardasha (June 2028 – January 2031): Rahu in 8H (Pisces/Uttara Bhadrapada) continues amplifying the intelligence into depth and transformation. 2030 is the mid-point of this antardasha — the expansion is at full height. Gene Key 32 (Preservation): Venus in Purva Ashadha is her Venus Gene Key — even within the Rahu period, what she is building must be worth preserving. Rahu generates appetite; Venus in own nakshatra provides the discernment of what is actually worth wanting. The combination: bold ambition filtered through aesthetic integrity.</div>
+          </div>
+        </li>
+        <li class="cal-event">
+          <div class="ev-date">2030</div>
+          <div class="ev-dot peak"></div>
+          <div class="ev-content">
+            <div class="ev-title">JUPITER RETURN: Jupiter Returns to Natal Libra (Vargottama) <span class="ev-tag peak">Extraordinary</span></div>
+            <div class="ev-body">Jupiter completes its 12-year cycle and returns to sidereal Libra — her natal Jupiter position AND the sign where Jupiter is Vargottama. The first Jupiter Return (2018) opened Mercury Mahadasha. This second Return arrives within Mercury/Rahu, the most expansive antardasha. Vargottama Jupiter returning to its birth position: dharmic expansion at maximum power. The Vishakha Jupiter (dual paths, triumphant archway) speaks: what she has been building on two concurrent tracks since 2026 is ready to converge. Initiate what she wants to build for the next 12 years — this is one of the most significant windows of her twenties.</div>
+          </div>
+        </li>
+        <li class="cal-event">
+          <div class="ev-date">January 2031</div>
+          <div class="ev-dot transit"></div>
+          <div class="ev-content">
+            <div class="ev-title">Mercury/Rahu Closes · Mercury/Jupiter Opens <span class="ev-tag power">Antardasha Shift</span></div>
+            <div class="ev-body">January 24, 2031 — her 25th birthday, and the close of Mercury/Rahu. Mercury/Jupiter opens (January 2031 – May 2033): Jupiter Vargottama in Libra/Vishakha (3rd house) as antardasha lord. After the ambitious expansion of Rahu, Jupiter brings wisdom, synthesis, and the building of a genuine body of work. What Mercury/Rahu reached for, Mercury/Jupiter makes real and transmissible. The dharmic communicator is given her platform. Age 25.</div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<script>
+  function show(id) {
+    document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+    document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
+    document.getElementById(id).classList.add('active');
+    event.currentTarget.classList.add('active');
+    window.scrollTo(0, 0);
+  }
+</script>
+</body>
+</html>
